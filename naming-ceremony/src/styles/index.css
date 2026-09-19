@@ -23,11 +23,7 @@
   }
 }
 
-@layer components {
-  .text-shadow-soft {
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  }
-}
+
 
 /* Swiper custom overrides */
 .swiper-wrapper {
