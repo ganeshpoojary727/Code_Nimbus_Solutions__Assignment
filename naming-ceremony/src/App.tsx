@@ -1,8 +1,8 @@
 import React, { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-const Navbar = React.lazy(() => import('./components/nce/Navbar'));
-const Music = React.lazy(() => import('./components/nce/Music'));
+const Navbar = React.lazy(() => import('./components/Navbar'));
+const Music = React.lazy(() => import('./components/Music'));
 const HomePage = React.lazy(() => import('./pages/HomePage'));
 const GalleryPage = React.lazy(() => import('./pages/GalleryPage'));
 

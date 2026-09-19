@@ -1,6 +1,6 @@
-import { useState, type FormEvent } from 'react';
+﻿import { useState, type FormEvent } from 'react';
 import { motion } from 'framer-motion';
-import { type Wish, AI_WISH_TEMPLATES } from '../../data/content';
+import { type Wish, AI_WISH_TEMPLATES } from '../data/content';
 
 interface SendWishesProps {
   onSubmit?: (wish: Wish) => void;

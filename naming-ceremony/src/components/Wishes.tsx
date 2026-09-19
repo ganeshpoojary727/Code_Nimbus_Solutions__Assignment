@@ -1,6 +1,6 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { INITIAL_WISHES, type Wish } from '../../data/content';
+import { INITIAL_WISHES, type Wish } from '../data/content';
 
 interface WishesProps {
   wishes?: Wish[];

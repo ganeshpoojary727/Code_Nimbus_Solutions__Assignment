@@ -1,6 +1,6 @@
-import { motion, type Variants } from 'framer-motion';
-import { useCountdown } from '../../hooks/useCountdown';
-import { SITE_CONTENT } from '../../data/content';
+﻿import { motion, type Variants } from 'framer-motion';
+import { useCountdown } from '../hooks/useCountdown';
+import { SITE_CONTENT } from '../data/content';
 
 const COUNTDOWN_STARS = [
   { id: '1', style: { top: '10%', left: '42%', width: '3.5rem' } },

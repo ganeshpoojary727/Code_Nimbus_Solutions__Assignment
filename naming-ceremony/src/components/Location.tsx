@@ -1,6 +1,6 @@
-import { useRef } from 'react';
+﻿import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { SITE_CONTENT } from '../../data/content';
+import { SITE_CONTENT } from '../data/content';
 
 export default function Location() {
   const frameRef = useRef<HTMLDivElement>(null);

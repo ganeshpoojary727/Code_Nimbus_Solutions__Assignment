@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import { SITE_CONTENT } from '../../data/content';
+﻿import { motion } from 'framer-motion';
+import { SITE_CONTENT } from '../data/content';
 
 export default function HeroSection() {
   return (

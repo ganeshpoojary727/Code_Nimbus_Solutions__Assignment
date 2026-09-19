@@ -1,15 +1,15 @@
 import React, { Suspense, useState } from 'react';
 import { INITIAL_WISHES, type Wish } from '../data/content';
 
-const HeroSection = React.lazy(() => import('../components/nce/HeroSection'));
-const CountDown = React.lazy(() => import('../components/nce/CountDown'));
-const WarmInvite = React.lazy(() => import('../components/nce/WarmInvite'));
-const Location = React.lazy(() => import('../components/nce/Location'));
-const Wishes = React.lazy(() => import('../components/nce/Wishes'));
-const SendWishes = React.lazy(() => import('../components/nce/SendWishes'));
-const Schedule = React.lazy(() => import('../components/nce/Schedule'));
-const Video = React.lazy(() => import('../components/nce/Video'));
-const Footer = React.lazy(() => import('../components/nce/Footer'));
+const HeroSection = React.lazy(() => import('../components/HeroSection'));
+const CountDown = React.lazy(() => import('../components/CountDown'));
+const WarmInvite = React.lazy(() => import('../components/WarmInvite'));
+const Location = React.lazy(() => import('../components/Location'));
+const Wishes = React.lazy(() => import('../components/Wishes'));
+const SendWishes = React.lazy(() => import('../components/SendWishes'));
+const Schedule = React.lazy(() => import('../components/Schedule'));
+const Video = React.lazy(() => import('../components/Video'));
+const Footer = React.lazy(() => import('../components/Footer'));
 
 export default function HomePage() {
   const [wishes, setWishes] = useState<Wish[]>(INITIAL_WISHES);

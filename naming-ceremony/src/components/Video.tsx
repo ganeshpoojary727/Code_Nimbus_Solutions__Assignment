@@ -1,4 +1,4 @@
-import { SITE_CONTENT } from '../../data/content';
+﻿import { SITE_CONTENT } from '../data/content';
 
 export default function Video() {
   return (

@@ -1,6 +1,6 @@
-import { useState, useRef } from 'react';
+﻿import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { TIMELINE_EVENTS } from '../../data/content';
+import { TIMELINE_EVENTS } from '../data/content';
 
 export default function Schedule() {
   const [activeIndex, setActiveIndex] = useState(0);

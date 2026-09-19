@@ -1,5 +1,5 @@
-import { useState, useRef } from 'react';
-import { SITE_CONTENT } from '../../data/content';
+﻿import { useState, useRef } from 'react';
+import { SITE_CONTENT } from '../data/content';
 
 export default function Music() {
   const [isPlaying, setIsPlaying] = useState(false);
