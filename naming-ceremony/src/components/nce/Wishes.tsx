@@ -2,11 +2,11 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { INITIAL_WISHES, type Wish } from '../../data/content';
 
-interface Nam002WishesProps {
+interface WishesProps {
   wishes?: Wish[];
 }
 
-export default function Nam002Wishes({ wishes = INITIAL_WISHES }: Nam002WishesProps) {
+export default function Wishes({ wishes = INITIAL_WISHES }: WishesProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const prev = () => {
@@ -20,59 +20,59 @@ export default function Nam002Wishes({ wishes = INITIAL_WISHES }: Nam002WishesPr
   const currentWish = wishes[currentIndex] || wishes[0];
 
   return (
-    <section id="nam002-wishes-section">
-      <div className="nam002-wishes-leftflower">
+    <section id="nce-wishes-section">
+      <div className="nce-wishes-leftflower">
         <img alt="" src="/svg/flower.svg" draggable={false} />
       </div>
-      <div className="nam002-wishes-bottomflower">
+      <div className="nce-wishes-bottomflower">
         <img alt="" src="/svg/flower.svg" draggable={false} />
       </div>
-      <div className="nam002-wishes-rightstar">
+      <div className="nce-wishes-rightstar">
         <img alt="" src="/svg/star.svg" draggable={false} />
       </div>
-      <div className="nam002-wishes-topstar">
+      <div className="nce-wishes-topstar">
         <img alt="" src="/svg/star.svg" draggable={false} />
       </div>
-      <div className="nam002-wishes-topleaf">
+      <div className="nce-wishes-topleaf">
         <img alt="" src="/svg/wishestopleaf.svg" draggable={false} />
       </div>
-      <div className="nam002-wishes-bottomleaf">
+      <div className="nce-wishes-bottomleaf">
         <img alt="" src="/svg/wishesbottomleaf.svg" draggable={false} />
       </div>
 
       <div className="nimbus-container">
-        <div className="nam002-wishes-container">
-          <p className="nam002-wishes-title">Wishes for the baby</p>
+        <div className="nce-wishes-container">
+          <p className="nce-wishes-title">Wishes for the baby</p>
 
-          <div className="nam002-wishes-content">
-            <div className="nam002-wishes-innerstar-one">
+          <div className="nce-wishes-content">
+            <div className="nce-wishes-innerstar-one">
               <img alt="" src="/svg/star.svg" draggable={false} />
             </div>
-            <div className="nam002-wishes-innerstar-two">
+            <div className="nce-wishes-innerstar-two">
               <img alt="" src="/svg/star.svg" draggable={false} />
             </div>
 
-            <img alt="" className="nam002-wishes-ribbon" src="/svg/ribbon.webp" draggable={false} />
+            <img alt="" className="nce-wishes-ribbon" src="/svg/ribbon.webp" draggable={false} />
 
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
-                className="nam002-wish-item"
+                className="nce-wish-item"
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.3 }}
               >
-                <p className="nam002-wish-author">{currentWish?.name || 'Well Wisher'}</p>
-                <p className="nam002-wish-message">{currentWish?.message || ''}</p>
+                <p className="nce-wish-author">{currentWish?.name || 'Well Wisher'}</p>
+                <p className="nce-wish-message">{currentWish?.message || ''}</p>
               </motion.div>
             </AnimatePresence>
 
-            <hr className="nam002-wishes-divider" />
+            <hr className="nce-wishes-divider" />
 
-            <div className="nam002-wishes-pagination">
+            <div className="nce-wishes-pagination">
               <button
-                className="nam002-wishes-arrow"
+                className="nce-wishes-arrow"
                 onClick={prev}
                 aria-label="Previous wish"
                 type="button"
@@ -92,12 +92,12 @@ export default function Nam002Wishes({ wishes = INITIAL_WISHES }: Nam002WishesPr
                 </svg>
               </button>
 
-              <span className="nam002-wishes-pagecount">
+              <span className="nce-wishes-pagecount">
                 {currentIndex + 1} / {wishes.length}
               </span>
 
               <button
-                className="nam002-wishes-arrow"
+                className="nce-wishes-arrow"
                 onClick={next}
                 aria-label="Next wish"
                 type="button"

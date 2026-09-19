@@ -1,13 +1,13 @@
 import { NavLink } from 'react-router-dom';
 
-export default function Nam002Navbar() {
+export default function Navbar() {
   return (
-    <div className="nam002-shared-navbar-container">
-      <nav className="shared-navbar fixed nam002-navbar" id="sticky-nav">
+    <div className="nce-shared-navbar-container">
+      <nav className="shared-navbar fixed nce-navbar" id="sticky-nav">
         <NavLink
           to="/"
           className={({ isActive }) =>
-            `shared-nav-item ${isActive ? 'nam002-active' : ''}`
+            `shared-nav-item ${isActive ? 'nce-active' : ''}`
           }
           id="nav-home"
           aria-label="Home"
@@ -18,7 +18,7 @@ export default function Nam002Navbar() {
         <NavLink
           to="/gallery"
           className={({ isActive }) =>
-            `shared-nav-item ${isActive ? 'nam002-active' : ''}`
+            `shared-nav-item ${isActive ? 'nce-active' : ''}`
           }
           id="nav-gallery"
           aria-label="Gallery"

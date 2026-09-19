@@ -1,16 +1,16 @@
 import { motion } from 'framer-motion';
 import { SITE_CONTENT } from '../../data/content';
 
-export default function Nam002HeroSection() {
+export default function HeroSection() {
   return (
-    <section id="nam002-hero-section">
+    <section id="nce-hero-section">
       {/* ════════════════════════════════════════════════════════════════
           DECORATIVE LEAVES — fade in 1s after arch animation completes
           ════════════════════════════════════════════════════════════════ */}
 
       {/* Top Leaf (Desktop) — fades in 1s after arch animation completes (arch: 0.8s → leaves at 1.8s) */}
       <motion.div
-        className="nam002-hero-topleaf"
+        className="nce-hero-topleaf"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.75, ease: 'easeOut', delay: 1.8 }}
@@ -20,7 +20,7 @@ export default function Nam002HeroSection() {
 
       {/* Right Leaf (Desktop) */}
       <motion.div
-        className="nam002-hero-rightleaf"
+        className="nce-hero-rightleaf"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.75, ease: 'easeOut', delay: 1.9 }}
@@ -32,7 +32,7 @@ export default function Nam002HeroSection() {
           BACKGROUND STARS (Ambient twinkle)
           ════════════════════════════════════════════════════════════════ */}
       <motion.div
-        className="nam002-hero-star-left"
+        className="nce-hero-star-left"
         initial={{ opacity: 0 }}
         animate={{ opacity: [0.75, 0.3, 0.85, 0.4, 0.75] }}
         transition={{ duration: 3.8, ease: 'easeInOut', repeat: Infinity, delay: 0.2 }}
@@ -41,7 +41,7 @@ export default function Nam002HeroSection() {
       </motion.div>
 
       <motion.div
-        className="nam002-hero-star-right"
+        className="nce-hero-star-right"
         initial={{ opacity: 0 }}
         animate={{ opacity: [0.75, 0.35, 0.9, 0.45, 0.75] }}
         transition={{ duration: 4.2, ease: 'easeInOut', repeat: Infinity, delay: 0.4 }}
@@ -50,7 +50,7 @@ export default function Nam002HeroSection() {
       </motion.div>
 
       <motion.div
-        className="nam002-hero-star-bottom"
+        className="nce-hero-star-bottom"
         initial={{ opacity: 0 }}
         animate={{ opacity: [0.75, 0.25, 0.8, 0.35, 0.75] }}
         transition={{ duration: 3.5, ease: 'easeInOut', repeat: Infinity, delay: 0.3 }}
@@ -60,21 +60,21 @@ export default function Nam002HeroSection() {
 
       {/* Mobile Stars */}
       <motion.div
-        className="nam002-hero-star-mobile-one"
+        className="nce-hero-star-mobile-one"
         animate={{ opacity: [0.85, 0.3, 0.85] }}
         transition={{ duration: 3.5, ease: 'easeInOut', repeat: Infinity }}
       >
         <img alt="" src="/svg/star.svg" draggable={false} />
       </motion.div>
       <motion.div
-        className="nam002-hero-star-mobile-two"
+        className="nce-hero-star-mobile-two"
         animate={{ opacity: [0.7, 0.25, 0.7] }}
         transition={{ duration: 4.0, ease: 'easeInOut', repeat: Infinity, delay: 0.5 }}
       >
         <img alt="" src="/svg/star.svg" draggable={false} />
       </motion.div>
       <motion.div
-        className="nam002-hero-star-mobile-three"
+        className="nce-hero-star-mobile-three"
         animate={{ opacity: [0.9, 0.35, 0.9] }}
         transition={{ duration: 3.2, ease: 'easeInOut', repeat: Infinity, delay: 1 }}
       >
@@ -88,7 +88,7 @@ export default function Nam002HeroSection() {
 
       {/* Left Flower (Desktop) */}
       <motion.div
-        className="nam002-hero-flower-left"
+        className="nce-hero-flower-left"
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{
@@ -114,7 +114,7 @@ export default function Nam002HeroSection() {
 
       {/* Right Flower (Desktop) */}
       <motion.div
-        className="nam002-hero-flower-right"
+        className="nce-hero-flower-right"
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{
@@ -140,7 +140,7 @@ export default function Nam002HeroSection() {
 
       {/* Mobile Flower Top */}
       <motion.div
-        className="nam002-hero-flower-mobile-top"
+        className="nce-hero-flower-mobile-top"
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{
@@ -166,7 +166,7 @@ export default function Nam002HeroSection() {
 
       {/* Bottom-Right Flower (Desktop) — partially visible at right-bottom corner, like original site */}
       <motion.div
-        className="nam002-hero-flower-bottom"
+        className="nce-hero-flower-bottom"
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 3.2, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
@@ -187,14 +187,14 @@ export default function Nam002HeroSection() {
       <div className="nimbus-container">
         {/* STEP 1: Main arch widget fades in smoothly — no scaleY grow, renders at natural size */}
         <motion.div
-          className="nam002-hero-container"
+          className="nce-hero-container"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
         >
           {/* Bottom leaf fades in 1s after arch completes (T = 1.8s stagger, sequence delay 2.0s) */}
           <motion.div
-            className="nam002-hero-bottomleaf"
+            className="nce-hero-bottomleaf"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.75, ease: 'easeOut', delay: 2.0 }}
@@ -203,16 +203,16 @@ export default function Nam002HeroSection() {
           </motion.div>
 
           {/* Mobile Container Stars */}
-          <div className="nam002-hero-star-mobile-topleft">
+          <div className="nce-hero-star-mobile-topleft">
             <img alt="" src="/svg/star.svg" draggable={false} />
           </div>
-          <div className="nam002-hero-star-mobile-bottomleft">
+          <div className="nce-hero-star-mobile-bottomleft">
             <img alt="" src="/svg/star.svg" draggable={false} />
           </div>
 
           {/* Mobile Container Flowers (Steps 5 & 6) */}
           <motion.div
-            className="nam002-hero-flower-mobile-topright"
+            className="nce-hero-flower-mobile-topright"
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{
@@ -237,7 +237,7 @@ export default function Nam002HeroSection() {
           </motion.div>
 
           <motion.div
-            className="nam002-hero-flower-mobile-bottomright"
+            className="nce-hero-flower-mobile-bottomright"
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{
@@ -262,17 +262,17 @@ export default function Nam002HeroSection() {
           </motion.div>
 
           {/* Card Content */}
-          <div className="nam002-hero-content">
+          <div className="nce-hero-content">
             {/* STEP 2: Child Image fades in (T = 0.7s - 1.3s) */}
             <motion.div
-              className="nam002-hero-image-wrap"
+              className="nce-hero-image-wrap"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, ease: 'easeOut', delay: 0.7 }}
             >
               {/* STEP 4: Ribbon bow animates onto the image (T = 2.45s - 3.0s) */}
               <motion.div
-                className="nam002-hero-ribbon"
+                className="nce-hero-ribbon"
                 initial={{ opacity: 0, scale: 0, rotate: -20 }}
                 animate={{ opacity: 1, scale: 1, rotate: 5 }}
                 transition={{ duration: 0.55, ease: [0.34, 1.56, 0.64, 1], delay: 2.45 }}
@@ -282,16 +282,16 @@ export default function Nam002HeroSection() {
               <img
                 src={SITE_CONTENT.babyPhoto}
                 alt="Baby"
-                className="nam002-hero-baby"
+                className="nce-hero-baby"
                 draggable={false}
               />
             </motion.div>
 
             {/* STEP 3: All text loaded top to bottom (T = 1.3s - 2.3s) */}
-            <div className="nam002-hero-details">
+            <div className="nce-hero-details">
               {/* Text 1: Invite Line */}
               <motion.p
-                className="nam002-hero-invite"
+                className="nce-hero-invite"
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.35, ease: 'easeOut', delay: 1.3 }}
@@ -301,7 +301,7 @@ export default function Nam002HeroSection() {
 
               {/* Text 2: Title */}
               <motion.h1
-                className="nam002-hero-title"
+                className="nce-hero-title"
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.35, ease: 'easeOut', delay: 1.5 }}
@@ -311,7 +311,7 @@ export default function Nam002HeroSection() {
 
               {/* Text 3: Subtitle */}
               <motion.p
-                className="nam002-hero-sub"
+                className="nce-hero-sub"
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.35, ease: 'easeOut', delay: 1.7 }}
@@ -322,7 +322,7 @@ export default function Nam002HeroSection() {
 
             {/* Text 4: Date Block */}
             <motion.div
-              className="nam002-hero-date"
+              className="nce-hero-date"
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.35, ease: 'easeOut', delay: 1.9 }}
@@ -332,7 +332,7 @@ export default function Nam002HeroSection() {
 
             {/* Text 5: Location & Open in Maps Button */}
             <motion.div
-              className="nam002-hero-location"
+              className="nce-hero-location"
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.35, ease: 'easeOut', delay: 2.1 }}
@@ -342,7 +342,7 @@ export default function Nam002HeroSection() {
                 href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(SITE_CONTENT.venueMapQuery)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="nam002-hero-maps-button inline-flex items-center justify-center"
+                className="nce-hero-maps-button inline-flex items-center justify-center"
                 id="open-in-maps-button"
               >
                 Open in Maps

@@ -1,4 +1,4 @@
-export default function Nam002Footer() {
+export default function Footer() {
   return (
     <footer className="shared-footer-main" id="shared-footer-main">
       <div className="shared-footer-top-section">

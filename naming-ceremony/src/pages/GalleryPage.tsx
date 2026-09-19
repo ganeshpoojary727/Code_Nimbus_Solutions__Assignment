@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { GALLERY_IMAGES } from '../data/content';
-import Nam002Footer from '../components/Nam002/Nam002-Footer';
+import Footer from '../components/nce/Footer';
 
-export default function Nam002Gallery() {
+export default function GalleryPage() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   const openLightbox = (index: number) => setLightboxIndex(index);
@@ -24,25 +24,25 @@ export default function Nam002Gallery() {
 
   return (
     <main>
-      <section id="nam002-gallery-section">
-        <div className="nam002-gallery-topleft">
+      <section id="nce-gallery-section">
+        <div className="nce-gallery-topleft">
           <img alt="" src="/svg/wishestopleaf.svg" draggable={false} />
         </div>
-        <div className="nam002-gallery-topright">
+        <div className="nce-gallery-topright">
           <img alt="" src="/svg/wishestopleaf.svg" draggable={false} />
         </div>
-        <div className="nam002-gallery-bottomleft">
+        <div className="nce-gallery-bottomleft">
           <img alt="" src="/svg/wishesbottomleaf.svg" draggable={false} />
         </div>
-        <div className="nam002-gallery-bottom">
+        <div className="nce-gallery-bottom">
           <img alt="" src="/svg/flower.svg" draggable={false} />
         </div>
 
         <div className="nimbus-container">
-          <div className="nam002-gallery-container">
-            <h1 className="nam002-gallery-title">Gallery</h1>
+          <div className="nce-gallery-container">
+            <h1 className="nce-gallery-title">Gallery</h1>
 
-            <div className="nam002-gallery-content w-full">
+            <div className="nce-gallery-content w-full">
               <div className="gallery">
                 {GALLERY_IMAGES.map((image, index) => (
                   <motion.div
@@ -126,7 +126,7 @@ export default function Nam002Gallery() {
         )}
       </AnimatePresence>
 
-      <Nam002Footer />
+      <Footer />
     </main>
   );
 }

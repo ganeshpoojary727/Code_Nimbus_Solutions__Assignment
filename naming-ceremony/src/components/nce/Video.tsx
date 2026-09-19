@@ -1,22 +1,22 @@
 import { SITE_CONTENT } from '../../data/content';
 
-export default function Nam002Video() {
+export default function Video() {
   return (
-    <section id="nam002-video-section">
-      <div className="nam002-video-top">
+    <section id="nce-video-section">
+      <div className="nce-video-top">
         <img alt="" src="/svg/videotop.svg" draggable={false} />
       </div>
-      <div className="nam002-video-bottom">
+      <div className="nce-video-bottom">
         <img alt="" src="/svg/videobottom.svg" draggable={false} />
       </div>
 
       <div className="nimbus-container">
-        <div className="nam002-video-container">
-          <div className="nam002-video-wrapper">
+        <div className="nce-video-container">
+          <div className="nce-video-wrapper">
             <iframe
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
-              className="nam002-video"
+              className="nce-video"
               frameBorder="0"
               src={SITE_CONTENT.youtubeEmbedUrl}
               title="Video"

@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 import { SITE_CONTENT } from '../../data/content';
 
-export default function Nam002Music() {
+export default function Music() {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -19,7 +19,7 @@ export default function Nam002Music() {
   };
 
   return (
-    <div className="nam002-music-section">
+    <div className="nce-music-section">
       <audio
         ref={audioRef}
         loop

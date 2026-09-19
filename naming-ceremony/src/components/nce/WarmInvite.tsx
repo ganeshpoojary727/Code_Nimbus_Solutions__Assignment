@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
 
-export default function Nam002WarmInvite() {
+export default function WarmInvite() {
   return (
-    <section id="nam002-warm-invite-section">
+    <section id="nce-warm-invite-section">
       {/* Top Leaf */}
       <motion.div
-        className="nam002-warminvite-topleaf"
+        className="nce-warminvite-topleaf"
         initial={{ opacity: 0, x: -25, y: -25 }}
         whileInView={{ opacity: 1, x: -6, y: -10 }}
         viewport={{ once: true }}
@@ -16,7 +16,7 @@ export default function Nam002WarmInvite() {
 
       {/* Bottom Leaf */}
       <motion.div
-        className="nam002-warminvite-bottomleaf"
+        className="nce-warminvite-bottomleaf"
         initial={{ opacity: 0, x: 25, y: 25 }}
         whileInView={{ opacity: 1, x: 6, y: 10 }}
         viewport={{ once: true }}
@@ -27,7 +27,7 @@ export default function Nam002WarmInvite() {
 
       {/* Top Flower (Right Top) — slowly becomes bigger after main widget animation */}
       <motion.div
-        className="nam002-warminvite-topflower"
+        className="nce-warminvite-topflower"
         initial={{ opacity: 0, scale: 0 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
@@ -38,7 +38,7 @@ export default function Nam002WarmInvite() {
 
       {/* Bottom Flower */}
       <motion.div
-        className="nam002-warminvite-bottomflower"
+        className="nce-warminvite-bottomflower"
         initial={{ opacity: 0, scale: 0 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
@@ -49,7 +49,7 @@ export default function Nam002WarmInvite() {
 
       {/* Right Flower */}
       <motion.div
-        className="nam002-warminvite-rightflower"
+        className="nce-warminvite-rightflower"
         initial={{ opacity: 0, scale: 0 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
@@ -60,21 +60,21 @@ export default function Nam002WarmInvite() {
 
       {/* Stars */}
       <motion.div
-        className="nam002-warminvite-topstar"
+        className="nce-warminvite-topstar"
         animate={{ opacity: [0.4, 0.9, 0.4] }}
         transition={{ duration: 4, ease: 'easeInOut', repeat: Infinity }}
       >
         <img alt="" src="/svg/star.svg" draggable={false} />
       </motion.div>
       <motion.div
-        className="nam002-warminvite-bottomstar"
+        className="nce-warminvite-bottomstar"
         animate={{ opacity: [0.35, 0.85, 0.35] }}
         transition={{ duration: 4.5, ease: 'easeInOut', repeat: Infinity, delay: 0.5 }}
       >
         <img alt="" src="/svg/star.svg" draggable={false} />
       </motion.div>
       <motion.div
-        className="nam002-warminvite-leftstar"
+        className="nce-warminvite-leftstar"
         animate={{ opacity: [0.4, 0.95, 0.4] }}
         transition={{ duration: 3.8, ease: 'easeInOut', repeat: Infinity, delay: 1 }}
       >
@@ -84,14 +84,14 @@ export default function Nam002WarmInvite() {
       {/* Container */}
       <div className="nimbus-container">
         <motion.div
-          className="nam002-warminvite-container"
+          className="nce-warminvite-container"
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
           <motion.div
-            className="nam002-warminvite-innerflower"
+            className="nce-warminvite-innerflower"
             initial={{ opacity: 0, scale: 0 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -101,7 +101,7 @@ export default function Nam002WarmInvite() {
           </motion.div>
 
           <motion.div
-            className="nam002-warminvite-innerstar-one"
+            className="nce-warminvite-innerstar-one"
             animate={{ opacity: [0.3, 0.8, 0.3] }}
             transition={{ duration: 3.5, ease: 'easeInOut', repeat: Infinity }}
           >
@@ -109,16 +109,16 @@ export default function Nam002WarmInvite() {
           </motion.div>
 
           <motion.div
-            className="nam002-warminvite-innerstar-two"
+            className="nce-warminvite-innerstar-two"
             animate={{ opacity: [0.4, 0.9, 0.4] }}
             transition={{ duration: 4.2, ease: 'easeInOut', repeat: Infinity, delay: 0.6 }}
           >
             <img alt="" src="/svg/star.svg" draggable={false} />
           </motion.div>
 
-          <div className="nam002-warminvite-content">
+          <div className="nce-warminvite-content">
             <motion.p
-              className="nam002-warminvite-title"
+              className="nce-warminvite-title"
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -127,7 +127,7 @@ export default function Nam002WarmInvite() {
               Warm Invite
             </motion.p>
             <motion.p
-              className="nam002-warminvite-text"
+              className="nce-warminvite-text"
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

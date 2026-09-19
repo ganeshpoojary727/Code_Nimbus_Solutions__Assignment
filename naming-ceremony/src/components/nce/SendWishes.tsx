@@ -2,11 +2,11 @@ import { useState, type FormEvent } from 'react';
 import { motion } from 'framer-motion';
 import { type Wish, AI_WISH_TEMPLATES } from '../../data/content';
 
-interface Nam002SendWishesProps {
+interface SendWishesProps {
   onSubmit?: (wish: Wish) => void;
 }
 
-export default function Nam002SendWishes({ onSubmit }: Nam002SendWishesProps) {
+export default function SendWishes({ onSubmit }: SendWishesProps) {
   const [name, setName] = useState('');
   const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -40,64 +40,64 @@ export default function Nam002SendWishes({ onSubmit }: Nam002SendWishesProps) {
   };
 
   return (
-    <section id="nam002-sendwishes-section">
+    <section id="nce-sendwishes-section">
       {/* Static flowers: no animation as requested */}
-      <div className="nam002-sendwishes-topflower">
+      <div className="nce-sendwishes-topflower">
         <img alt="" src="/svg/flower.svg" draggable={false} />
       </div>
-      <div className="nam002-sendwishes-bottomflower">
+      <div className="nce-sendwishes-bottomflower">
         <img alt="" src="/svg/flower.svg" draggable={false} />
       </div>
-      <div className="nam002-sendwishes-rightflower">
+      <div className="nce-sendwishes-rightflower">
         <img alt="" src="/svg/flower.svg" draggable={false} />
       </div>
 
       {/* Animated stars: get bright and get vanished operating with opacity */}
       <motion.div
-        className="nam002-sendwishes-leftstar"
+        className="nce-sendwishes-leftstar"
         animate={{ opacity: [0, 1, 0] }}
         transition={{ duration: 2.6, ease: 'easeInOut', repeat: Infinity, delay: 0 }}
       >
         <img alt="" src="/svg/star.svg" draggable={false} />
       </motion.div>
       <motion.div
-        className="nam002-sendwishes-topstar"
+        className="nce-sendwishes-topstar"
         animate={{ opacity: [0, 1, 0] }}
         transition={{ duration: 3.2, ease: 'easeInOut', repeat: Infinity, delay: 0.8 }}
       >
         <img alt="" src="/svg/star.svg" draggable={false} />
       </motion.div>
       <motion.div
-        className="nam002-sendwishes-bottomstar-one"
+        className="nce-sendwishes-bottomstar-one"
         animate={{ opacity: [0, 1, 0] }}
         transition={{ duration: 2.8, ease: 'easeInOut', repeat: Infinity, delay: 1.5 }}
       >
         <img alt="" src="/svg/star.svg" draggable={false} />
       </motion.div>
       <motion.div
-        className="nam002-sendwishes-bottomstar-two"
+        className="nce-sendwishes-bottomstar-two"
         animate={{ opacity: [0, 1, 0] }}
         transition={{ duration: 3.4, ease: 'easeInOut', repeat: Infinity, delay: 2.2 }}
       >
         <img alt="" src="/svg/star.svg" draggable={false} />
       </motion.div>
 
-      <div className="nam002-sendwishes-topcorner">
+      <div className="nce-sendwishes-topcorner">
         <img alt="" draggable={false} />
       </div>
-      <div className="nam002-sendwishes-bottomcorner">
+      <div className="nce-sendwishes-bottomcorner">
         <img alt="" draggable={false} />
       </div>
 
       <div className="nimbus-container">
-        <div className="nam002-sendwishes-container">
-          <p className="nam002-sendwishes-title">Send your wishes</p>
+        <div className="nce-sendwishes-container">
+          <p className="nce-sendwishes-title">Send your wishes</p>
 
-          <div className="nam002-sendwishes-content">
+          <div className="nce-sendwishes-content">
             {/* Boundary starts small and smoothly expands to full size */}
             <motion.img
               alt=""
-              className="nam002-sendwishes-tomb"
+              className="nce-sendwishes-tomb"
               src="/svg/sendwishtomb.svg"
               draggable={false}
               initial={{ scale: 0.86, opacity: 0.4 }}
@@ -107,7 +107,7 @@ export default function Nam002SendWishes({ onSubmit }: Nam002SendWishesProps) {
               style={{ transformOrigin: 'center center' }}
             />
 
-            <div className="nam002-sendwishes-wisher">
+            <div className="nce-sendwishes-wisher">
               <div className="Wisher-Section" id="wisher-section">
                 <div className="wisher-container" id="wisher-container">
                   <form className="wisher-form" id="wisher-form" onSubmit={handleSubmit}>

@@ -93,17 +93,17 @@ function CountdownNumber({
   return <>{countdown[unit]}</>;
 }
 
-export default function Nam002CountDown() {
+export default function CountDown() {
   return (
     <motion.section
-      id="nam002-countDown"
+      id="nce-countDown"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
     >
       {/* Countdown Leaf */}
       <motion.div
-        className="nam002-countDown-leaf"
+        className="nce-countDown-leaf"
         animate={{
           y: [0, 10, 0],
           rotate: [0, 2.5, 0],
@@ -115,7 +115,7 @@ export default function Nam002CountDown() {
 
       {/* Flower 1 — STAGE 3: pops up small-to-big right after flip complete, NO rotation */}
       <motion.div
-        className="nam002-countDown-flower-1"
+        className="nce-countDown-flower-1"
         variants={flower1Variants}
       >
         <img alt="" src="/svg/flower.svg" draggable={false} />
@@ -123,7 +123,7 @@ export default function Nam002CountDown() {
 
       {/* Flower 2 — STAGE 3: pops up small-to-big right after Flower 1, NO rotation */}
       <motion.div
-        className="nam002-countDown-flower-2"
+        className="nce-countDown-flower-2"
         variants={flower2Variants}
       >
         <img alt="" src="/svg/flower.svg" draggable={false} />
@@ -133,7 +133,7 @@ export default function Nam002CountDown() {
       {COUNTDOWN_STARS.map((star, i) => (
         <motion.div
           key={star.id}
-          className={`nam002-countDown-star-${star.id}`}
+          className={`nce-countDown-star-${star.id}`}
           style={star.style}
           animate={{
             opacity: [0.3, 0.95, 0.3],
@@ -152,41 +152,41 @@ export default function Nam002CountDown() {
 
       {/* Main Nimbus Container */}
       <div className="nimbus-container">
-        <div className="nam002-countDown-container">
+        <div className="nce-countDown-container">
           {/* Top Ribbon — STAGE 1: minimal up-and-down bounce */}
           <motion.div
-            className="nam002-countDown-ribbon"
+            className="nce-countDown-ribbon"
             variants={ribbonVariants}
           >
             <img alt="" src="/svg/ribbon.webp" draggable={false} />
           </motion.div>
 
-          <div className="nam002-countDown-content">
+          <div className="nce-countDown-content">
             {/* Title — STAGE 1: minimal up-and-down bounce */}
             <motion.p
-              className="nam002-countDown-title"
+              className="nce-countDown-title"
               variants={titleVariants}
             >
               Let the countdown begin
             </motion.p>
 
-            <div className="nam002-countDown-date">
+            <div className="nce-countDown-date">
               <div className="shared-countdown">
                 {TIME_UNIT_LABELS.map((unit, idx) => (
-                  <div key={unit.label} className="time-box nam002-flip-box">
+                  <div key={unit.label} className="time-box nce-flip-box">
                     {/* STAGE 2: Number flip card animation after Stage 1 */}
                     <motion.div
-                      className="nam002-flip-card"
+                      className="nce-flip-card"
                       custom={idx}
                       variants={cardVariants}
                     >
-                      <div className="nam002-flip-face nam002-flip-front">
-                        <div className="nam002-circle">
-                          <img className="nam002-circle-star" src="/svg/star.svg" alt="" />
+                      <div className="nce-flip-face nce-flip-front">
+                        <div className="nce-circle">
+                          <img className="nce-circle-star" src="/svg/star.svg" alt="" />
                         </div>
                       </div>
-                      <div className="nam002-flip-face nam002-flip-back">
-                        <span className="nam002-num">
+                      <div className="nce-flip-face nce-flip-back">
+                        <span className="nce-num">
                           <CountdownNumber
                             targetDate={SITE_CONTENT.ceremonyDate}
                             unit={unit.key}
@@ -194,7 +194,7 @@ export default function Nam002CountDown() {
                         </span>
                       </div>
                     </motion.div>
-                    <span className="nam002-label">{unit.label}</span>
+                    <span className="nce-label">{unit.label}</span>
                   </div>
                 ))}
               </div>
