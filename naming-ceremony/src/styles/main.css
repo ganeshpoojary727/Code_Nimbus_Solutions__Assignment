@@ -1,5 +1,5 @@
 /* ============================================================
-   Naming Ceremony Invitation � Main Stylesheet
+   Naming Ceremony Invitation - Main Stylesheet
    Fonts: Galada · Mulish · Playfair Display · Flamenco
           Fjalla One · Manrope
    Base:  1rem = 10px  (html { font-size: 62.5% })
@@ -1852,34 +1852,114 @@ html {
   font-size: 5rem;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   color: #96a29a;
   font-family: Galada, cursive;
   z-index: 1;
 }
 
+.nce-gallery-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 3.5rem;
+  z-index: 1;
+}
+
+.nce-gallery-content .upload-btn {
+  cursor: pointer;
+  outline: none;
+  background-color: #4c655d;
+  color: #fdfff1;
+  font-size: 3rem;
+  font-family: Galada, sans-serif;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0 2.5rem;
+  box-shadow: 0 5px 5px #00000040;
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nce-gallery-content .upload-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 12px #00000033;
+}
+
+.nce-gallery-content .upload-btn:active {
+  transform: scale(0.98);
+}
+
+.nce-gallery-content .pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.nce-gallery-content .pagination-text {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #96a29a;
+  font-family: Mulish, sans-serif;
+}
+
+.nce-gallery-content .pagination-previous-btn,
+.nce-gallery-content .pagination-next-btn {
+  background-color: #4c655d;
+  color: #fdfff1;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.nce-gallery-content .pagination-previous-btn:hover,
+.nce-gallery-content .pagination-next-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+.nce-gallery-content .pagination-previous-btn:active,
+.nce-gallery-content .pagination-next-btn:active {
+  transform: scale(0.95);
+}
+
 
 /* Gallery decorations */
-.nce-gallery-bottom     { position: absolute; right: 0;  bottom: 0; width: 10%; }
+.nce-gallery-bottom     { position: absolute; right: 0;  bottom: 0; width: 10%; z-index: 1; }
 .nce-gallery-bottom img { width: 100%; height: auto; display: block; }
 
-.nce-gallery-topleft   { position: absolute; width: 100px; top: 5%;  left: 10%; }
-.nce-gallery-topright  { position: absolute; width: 100px; top: 5%;  right: 20%; }
-.nce-gallery-bottomleft{ position: absolute; width: 120px; bottom: 0; left: -2%; transform: rotate(-90deg); }
+.nce-gallery-topleft   { position: absolute; width: 100px; top: 5%;  left: 10%; z-index: 1; }
+.nce-gallery-topright  { position: absolute; width: 100px; top: 5%;  right: 20%; z-index: 1; }
+.nce-gallery-bottomleft{ position: absolute; width: 100px; bottom: 5%; left: -2%; z-index: 1; }
 
 .nce-gallery-topleft img,
 .nce-gallery-topright img,
 .nce-gallery-bottomleft img { width: 100%; height: auto; display: block; }
 
 @media (max-width: 768px) {
-  .nce-gallery-title                       { font-size: 3.5rem; padding-bottom: 10%; }
+  .nce-gallery-title                       { font-size: 3.5rem; padding-bottom: 5%; }
   .nce-gallery-container                   { margin: 5%; margin-top: 7rem; }
+  .nce-gallery-content .upload-btn         { font-size: 2.2rem; padding: 0 2rem; }
+  .nce-gallery-content .pagination-text    { font-size: 1.6rem; }
   .nce-gallery-bottom                      { width: 14%; }
 }
 
 @media (max-width: 420px) {
-  .nce-gallery-title                       { font-size: 2.5rem; padding-bottom: 8%; margin-bottom: 0.5rem; }
+  .nce-gallery-title                       { font-size: 2.5rem; padding-bottom: 4%; margin-bottom: 0.5rem; }
   .nce-gallery-container                   { margin: 4%; gap: 0.75rem; margin-top: 7rem; }
+  .nce-gallery-content .upload-btn         { font-size: 1.6rem; padding: 0 1.5rem; }
+  .nce-gallery-content .pagination-text    { font-size: 1.2rem; }
   .nce-gallery-bottom                      { width: 18%; }
 }
 
