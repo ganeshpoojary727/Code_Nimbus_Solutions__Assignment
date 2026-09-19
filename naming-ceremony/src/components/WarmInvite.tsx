@@ -1,3 +1,4 @@
+import { asset } from '../utils/assets';
 import { motion } from 'framer-motion';
 
 export default function WarmInvite() {
@@ -11,7 +12,7 @@ export default function WarmInvite() {
         viewport={{ once: true }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
       >
-        <img alt="" src="/svg/wishestopleaf.svg" draggable={false} />
+        <img alt="" src={asset('/svg/wishestopleaf.svg')} draggable={false} />
       </motion.div>
 
       {/* Bottom Leaf */}
@@ -22,7 +23,7 @@ export default function WarmInvite() {
         viewport={{ once: true }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
       >
-        <img alt="" src="/svg/wishesbottomleaf.svg" draggable={false} />
+        <img alt="" src={asset('/svg/wishesbottomleaf.svg')} draggable={false} />
       </motion.div>
 
       {/* Top Flower (Right Top) — slowly becomes bigger after main widget animation */}
@@ -33,7 +34,7 @@ export default function WarmInvite() {
         viewport={{ once: true }}
         transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1], delay: 0.9 }}
       >
-        <img alt="" src="/svg/flower.svg" draggable={false} />
+        <img alt="" src={asset('/svg/flower.svg')} draggable={false} />
       </motion.div>
 
       {/* Bottom Flower */}
@@ -44,7 +45,7 @@ export default function WarmInvite() {
         viewport={{ once: true }}
         transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1], delay: 1.05 }}
       >
-        <img alt="" src="/svg/flower.svg" draggable={false} />
+        <img alt="" src={asset('/svg/flower.svg')} draggable={false} />
       </motion.div>
 
       {/* Right Flower */}
@@ -55,7 +56,7 @@ export default function WarmInvite() {
         viewport={{ once: true }}
         transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1], delay: 1.15 }}
       >
-        <img alt="" src="/svg/flower.svg" draggable={false} />
+        <img alt="" src={asset('/svg/flower.svg')} draggable={false} />
       </motion.div>
 
       {/* Stars */}
@@ -64,21 +65,21 @@ export default function WarmInvite() {
         animate={{ opacity: [0.4, 0.9, 0.4] }}
         transition={{ duration: 4, ease: 'easeInOut', repeat: Infinity }}
       >
-        <img alt="" src="/svg/star.svg" draggable={false} />
+        <img alt="" src={asset('/svg/star.svg')} draggable={false} />
       </motion.div>
       <motion.div
         className="nce-warminvite-bottomstar"
         animate={{ opacity: [0.35, 0.85, 0.35] }}
         transition={{ duration: 4.5, ease: 'easeInOut', repeat: Infinity, delay: 0.5 }}
       >
-        <img alt="" src="/svg/star.svg" draggable={false} />
+        <img alt="" src={asset('/svg/star.svg')} draggable={false} />
       </motion.div>
       <motion.div
         className="nce-warminvite-leftstar"
         animate={{ opacity: [0.4, 0.95, 0.4] }}
         transition={{ duration: 3.8, ease: 'easeInOut', repeat: Infinity, delay: 1 }}
       >
-        <img alt="" src="/svg/star.svg" draggable={false} />
+        <img alt="" src={asset('/svg/star.svg')} draggable={false} />
       </motion.div>
 
       {/* Container */}
@@ -97,7 +98,7 @@ export default function WarmInvite() {
             viewport={{ once: true }}
             transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1], delay: 0.8 }}
           >
-            <img alt="" src="/svg/flower.svg" draggable={false} />
+            <img alt="" src={asset('/svg/flower.svg')} draggable={false} />
           </motion.div>
 
           <motion.div
@@ -105,7 +106,7 @@ export default function WarmInvite() {
             animate={{ opacity: [0.3, 0.8, 0.3] }}
             transition={{ duration: 3.5, ease: 'easeInOut', repeat: Infinity }}
           >
-            <img alt="" src="/svg/star.svg" draggable={false} />
+            <img alt="" src={asset('/svg/star.svg')} draggable={false} />
           </motion.div>
 
           <motion.div
@@ -113,7 +114,7 @@ export default function WarmInvite() {
             animate={{ opacity: [0.4, 0.9, 0.4] }}
             transition={{ duration: 4.2, ease: 'easeInOut', repeat: Infinity, delay: 0.6 }}
           >
-            <img alt="" src="/svg/star.svg" draggable={false} />
+            <img alt="" src={asset('/svg/star.svg')} draggable={false} />
           </motion.div>
 
           <div className="nce-warminvite-content">

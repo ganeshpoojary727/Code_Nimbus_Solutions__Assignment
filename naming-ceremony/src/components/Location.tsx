@@ -1,4 +1,5 @@
-﻿import { useRef } from 'react';
+import { asset } from '../utils/assets';
+import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { SITE_CONTENT } from '../data/content';
 
@@ -15,7 +16,7 @@ export default function Location() {
         animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.7 }}
         transition={{ duration: 1.2, delay: 1.8, ease: 'easeOut' }}
       >
-        <img alt="" src="/svg/flower.svg" draggable={false} />
+        <img alt="" src={asset('/svg/flower.svg')} draggable={false} />
       </motion.div>
 
       {/* Star Two */}
@@ -24,11 +25,11 @@ export default function Location() {
         animate={{ opacity: [0.3, 0.85, 0.3], scale: [0.9, 1.05, 0.9] }}
         transition={{ duration: 4.2, ease: 'easeInOut', repeat: Infinity }}
       >
-        <img alt="" src="/svg/star.svg" draggable={false} />
+        <img alt="" src={asset('/svg/star.svg')} draggable={false} />
       </motion.div>
 
       <img alt="" className="bg-left" draggable={false} />
-      <img alt="" className="bg-right" src="/svg/locationright.svg" draggable={false} />
+      <img alt="" className="bg-right" src={asset('/svg/locationright.svg')} draggable={false} />
 
       <div className="nce-location-container">
         <div className="nce-location-content">
@@ -39,7 +40,7 @@ export default function Location() {
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.7 }}
             transition={{ duration: 1.2, delay: 1.4, ease: 'easeOut' }}
           >
-            <img alt="" src="/svg/flower.svg" draggable={false} />
+            <img alt="" src={asset('/svg/flower.svg')} draggable={false} />
           </motion.div>
 
           <motion.div
@@ -47,7 +48,7 @@ export default function Location() {
             animate={{ opacity: [0.35, 0.9, 0.35], scale: [0.9, 1.05, 0.9] }}
             transition={{ duration: 3.8, ease: 'easeInOut', repeat: Infinity }}
           >
-            <img alt="" src="/svg/star.svg" draggable={false} />
+            <img alt="" src={asset('/svg/star.svg')} draggable={false} />
           </motion.div>
 
           {/* Series of text animations after the flip */}
@@ -99,13 +100,13 @@ export default function Location() {
         </div>
 
         <div className="nce-location-design">
-          <img alt="" className="design-svg" src="/svg/locationdesign.svg" draggable={false} />
+          <img alt="" className="design-svg" src={asset('/svg/locationdesign.svg')} draggable={false} />
           <div className="nce-location-frame" ref={frameRef}>
             {/* Big bow ribbon: starts visible, flips horizontally (rotateY) on scroll */}
             <motion.img
               alt=""
               className="nce-location-ribbon"
-              src="/images/locationribbon.webp"
+              src={asset('/images/locationribbon.webp')}
               draggable={false}
               initial={{ rotateY: 0 }}
               animate={isInView ? { rotateY: 180 } : { rotateY: 0 }}

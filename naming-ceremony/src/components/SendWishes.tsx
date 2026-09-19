@@ -1,4 +1,5 @@
-﻿import { useState, type FormEvent } from 'react';
+import { asset } from '../utils/assets';
+import { useState, type FormEvent } from 'react';
 import { motion } from 'framer-motion';
 import { type Wish, AI_WISH_TEMPLATES } from '../data/content';
 
@@ -43,13 +44,13 @@ export default function SendWishes({ onSubmit }: SendWishesProps) {
     <section id="nce-sendwishes-section">
       {/* Static flowers: no animation as requested */}
       <div className="nce-sendwishes-topflower">
-        <img alt="" src="/svg/flower.svg" draggable={false} />
+        <img alt="" src={asset('/svg/flower.svg')} draggable={false} />
       </div>
       <div className="nce-sendwishes-bottomflower">
-        <img alt="" src="/svg/flower.svg" draggable={false} />
+        <img alt="" src={asset('/svg/flower.svg')} draggable={false} />
       </div>
       <div className="nce-sendwishes-rightflower">
-        <img alt="" src="/svg/flower.svg" draggable={false} />
+        <img alt="" src={asset('/svg/flower.svg')} draggable={false} />
       </div>
 
       {/* Animated stars: get bright and get vanished operating with opacity */}
@@ -58,28 +59,28 @@ export default function SendWishes({ onSubmit }: SendWishesProps) {
         animate={{ opacity: [0, 1, 0] }}
         transition={{ duration: 2.6, ease: 'easeInOut', repeat: Infinity, delay: 0 }}
       >
-        <img alt="" src="/svg/star.svg" draggable={false} />
+        <img alt="" src={asset('/svg/star.svg')} draggable={false} />
       </motion.div>
       <motion.div
         className="nce-sendwishes-topstar"
         animate={{ opacity: [0, 1, 0] }}
         transition={{ duration: 3.2, ease: 'easeInOut', repeat: Infinity, delay: 0.8 }}
       >
-        <img alt="" src="/svg/star.svg" draggable={false} />
+        <img alt="" src={asset('/svg/star.svg')} draggable={false} />
       </motion.div>
       <motion.div
         className="nce-sendwishes-bottomstar-one"
         animate={{ opacity: [0, 1, 0] }}
         transition={{ duration: 2.8, ease: 'easeInOut', repeat: Infinity, delay: 1.5 }}
       >
-        <img alt="" src="/svg/star.svg" draggable={false} />
+        <img alt="" src={asset('/svg/star.svg')} draggable={false} />
       </motion.div>
       <motion.div
         className="nce-sendwishes-bottomstar-two"
         animate={{ opacity: [0, 1, 0] }}
         transition={{ duration: 3.4, ease: 'easeInOut', repeat: Infinity, delay: 2.2 }}
       >
-        <img alt="" src="/svg/star.svg" draggable={false} />
+        <img alt="" src={asset('/svg/star.svg')} draggable={false} />
       </motion.div>
 
       <div className="nce-sendwishes-topcorner">
@@ -98,7 +99,7 @@ export default function SendWishes({ onSubmit }: SendWishesProps) {
             <motion.img
               alt=""
               className="nce-sendwishes-tomb"
-              src="/svg/sendwishtomb.svg"
+              src={asset('/svg/sendwishtomb.svg')}
               draggable={false}
               initial={{ scale: 0.86, opacity: 0.4 }}
               whileInView={{ scale: 1, opacity: 1 }}

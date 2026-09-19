@@ -1,4 +1,5 @@
-﻿import { useState } from 'react';
+import { asset } from '../utils/assets';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { INITIAL_WISHES, type Wish } from '../data/content';
 
@@ -22,22 +23,22 @@ export default function Wishes({ wishes = INITIAL_WISHES }: WishesProps) {
   return (
     <section id="nce-wishes-section">
       <div className="nce-wishes-leftflower">
-        <img alt="" src="/svg/flower.svg" draggable={false} />
+        <img alt="" src={asset('/svg/flower.svg')} draggable={false} />
       </div>
       <div className="nce-wishes-bottomflower">
-        <img alt="" src="/svg/flower.svg" draggable={false} />
+        <img alt="" src={asset('/svg/flower.svg')} draggable={false} />
       </div>
       <div className="nce-wishes-rightstar">
-        <img alt="" src="/svg/star.svg" draggable={false} />
+        <img alt="" src={asset('/svg/star.svg')} draggable={false} />
       </div>
       <div className="nce-wishes-topstar">
-        <img alt="" src="/svg/star.svg" draggable={false} />
+        <img alt="" src={asset('/svg/star.svg')} draggable={false} />
       </div>
       <div className="nce-wishes-topleaf">
-        <img alt="" src="/svg/wishestopleaf.svg" draggable={false} />
+        <img alt="" src={asset('/svg/wishestopleaf.svg')} draggable={false} />
       </div>
       <div className="nce-wishes-bottomleaf">
-        <img alt="" src="/svg/wishesbottomleaf.svg" draggable={false} />
+        <img alt="" src={asset('/svg/wishesbottomleaf.svg')} draggable={false} />
       </div>
 
       <div className="nimbus-container">
@@ -46,13 +47,13 @@ export default function Wishes({ wishes = INITIAL_WISHES }: WishesProps) {
 
           <div className="nce-wishes-content">
             <div className="nce-wishes-innerstar-one">
-              <img alt="" src="/svg/star.svg" draggable={false} />
+              <img alt="" src={asset('/svg/star.svg')} draggable={false} />
             </div>
             <div className="nce-wishes-innerstar-two">
-              <img alt="" src="/svg/star.svg" draggable={false} />
+              <img alt="" src={asset('/svg/star.svg')} draggable={false} />
             </div>
 
-            <img alt="" className="nce-wishes-ribbon" src="/svg/ribbon.webp" draggable={false} />
+            <img alt="" className="nce-wishes-ribbon" src={asset('/svg/ribbon.webp')} draggable={false} />
 
             <AnimatePresence mode="wait">
               <motion.div

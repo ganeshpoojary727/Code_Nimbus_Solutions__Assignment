@@ -1,13 +1,14 @@
-﻿import { SITE_CONTENT } from '../data/content';
+import { SITE_CONTENT } from '../data/content';
+import { asset } from '../utils/assets';
 
 export default function Video() {
   return (
     <section id="nce-video-section">
       <div className="nce-video-top">
-        <img alt="" src="/svg/videotop.svg" draggable={false} />
+        <img alt="" src={asset('/svg/videotop.svg')} draggable={false} />
       </div>
       <div className="nce-video-bottom">
-        <img alt="" src="/svg/videobottom.svg" draggable={false} />
+        <img alt="" src={asset('/svg/videobottom.svg')} draggable={false} />
       </div>
 
       <div className="nimbus-container">

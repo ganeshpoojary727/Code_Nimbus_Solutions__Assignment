@@ -3,6 +3,8 @@
 // Update these constants to personalize the invitation.
 // ════════════════════════════════════════════
 
+import { asset } from '../utils/assets';
+
 export const SITE_CONTENT = {
   // ── Parents & Baby ──
   parentA: 'Mr Nair',
@@ -32,8 +34,8 @@ export const SITE_CONTENT = {
     'With hearts overflowing with gratitude and joy, Mr & Mrs Nair joyfully invite you to the naming ceremony of their little blessing. Come, celebrate this beautiful milestone with us, and shower our little Vihaan with your warmest wishes and love.',
 
   // ── Images ──
-  babyPhoto: '/images/baby.jpg',
-  venuePhoto: '/images/venue.jpg',
+  babyPhoto: asset('/images/baby.jpg'),
+  venuePhoto: asset('/images/venue.jpg'),
 
   // ── Video ──
   youtubeEmbedUrl: 'https://www.youtube.com/embed/BWAnHej2vH8',

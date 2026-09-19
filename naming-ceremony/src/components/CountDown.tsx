@@ -1,4 +1,5 @@
-﻿import { motion, type Variants } from 'framer-motion';
+import { asset } from '../utils/assets';
+import { motion, type Variants } from 'framer-motion';
 import { useCountdown } from '../hooks/useCountdown';
 import { SITE_CONTENT } from '../data/content';
 
@@ -110,7 +111,7 @@ export default function CountDown() {
         }}
         transition={{ duration: 6, ease: 'easeInOut', repeat: Infinity }}
       >
-        <img alt="" src="/svg/countdownleaf.svg" draggable={false} />
+        <img alt="" src={asset('/svg/countdownleaf.svg')} draggable={false} />
       </motion.div>
 
       {/* Flower 1 — STAGE 3: pops up small-to-big right after flip complete, NO rotation */}
@@ -118,7 +119,7 @@ export default function CountDown() {
         className="nce-countDown-flower-1"
         variants={flower1Variants}
       >
-        <img alt="" src="/svg/flower.svg" draggable={false} />
+        <img alt="" src={asset('/svg/flower.svg')} draggable={false} />
       </motion.div>
 
       {/* Flower 2 — STAGE 3: pops up small-to-big right after Flower 1, NO rotation */}
@@ -126,7 +127,7 @@ export default function CountDown() {
         className="nce-countDown-flower-2"
         variants={flower2Variants}
       >
-        <img alt="" src="/svg/flower.svg" draggable={false} />
+        <img alt="" src={asset('/svg/flower.svg')} draggable={false} />
       </motion.div>
 
       {/* Stars 1-5 (ambient twinkle) */}
@@ -146,7 +147,7 @@ export default function CountDown() {
             delay: i * 0.3,
           }}
         >
-          <img alt="" src="/svg/star.svg" draggable={false} />
+          <img alt="" src={asset('/svg/star.svg')} draggable={false} />
         </motion.div>
       ))}
 
@@ -158,7 +159,7 @@ export default function CountDown() {
             className="nce-countDown-ribbon"
             variants={ribbonVariants}
           >
-            <img alt="" src="/svg/ribbon.webp" draggable={false} />
+            <img alt="" src={asset('/svg/ribbon.webp')} draggable={false} />
           </motion.div>
 
           <div className="nce-countDown-content">
@@ -182,7 +183,7 @@ export default function CountDown() {
                     >
                       <div className="nce-flip-face nce-flip-front">
                         <div className="nce-circle">
-                          <img className="nce-circle-star" src="/svg/star.svg" alt="" />
+                          <img className="nce-circle-star" src={asset('/svg/star.svg')} alt="" />
                         </div>
                       </div>
                       <div className="nce-flip-face nce-flip-back">

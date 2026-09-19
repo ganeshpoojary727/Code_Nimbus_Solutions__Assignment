@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import Footer from '../components/Footer';
+import { asset } from '../utils/assets';
 
 export default function GalleryPage() {
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -21,16 +22,16 @@ export default function GalleryPage() {
       <section id="nce-gallery-section">
         {/* Corner Floral & Leaf Decorations */}
         <div className="nce-gallery-topleft">
-          <img alt="" src="/svg/flower.svg" draggable={false} />
+          <img alt="" src={asset('/svg/flower.svg')} draggable={false} />
         </div>
         <div className="nce-gallery-topright">
-          <img alt="" src="/svg/flower.svg" draggable={false} />
+          <img alt="" src={asset('/svg/flower.svg')} draggable={false} />
         </div>
         <div className="nce-gallery-bottomleft">
-          <img alt="" src="/svg/flower.svg" draggable={false} />
+          <img alt="" src={asset('/svg/flower.svg')} draggable={false} />
         </div>
         <div className="nce-gallery-bottom">
-          <img alt="" src="/svg/rightleaf.svg" draggable={false} />
+          <img alt="" src={asset('/svg/rightleaf.svg')} draggable={false} />
         </div>
 
         <div className="nimbus-container">

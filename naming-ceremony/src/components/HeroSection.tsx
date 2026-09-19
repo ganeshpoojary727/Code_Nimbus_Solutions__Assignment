@@ -1,4 +1,5 @@
-﻿import { motion } from 'framer-motion';
+import { asset } from '../utils/assets';
+import { motion } from 'framer-motion';
 import { SITE_CONTENT } from '../data/content';
 
 export default function HeroSection() {
@@ -15,7 +16,7 @@ export default function HeroSection() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.75, ease: 'easeOut', delay: 1.8 }}
       >
-        <img alt="Hero Top Leaf" src="/svg/topleaf.svg" draggable={false} />
+        <img alt="Hero Top Leaf" src={asset('/svg/topleaf.svg')} draggable={false} />
       </motion.div>
 
       {/* Right Leaf (Desktop) */}
@@ -25,7 +26,7 @@ export default function HeroSection() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.75, ease: 'easeOut', delay: 1.9 }}
       >
-        <img alt="Hero Right Leaf" src="/svg/rightleaf.svg" draggable={false} />
+        <img alt="Hero Right Leaf" src={asset('/svg/rightleaf.svg')} draggable={false} />
       </motion.div>
 
       {/* ════════════════════════════════════════════════════════════════
@@ -37,7 +38,7 @@ export default function HeroSection() {
         animate={{ opacity: [0.75, 0.3, 0.85, 0.4, 0.75] }}
         transition={{ duration: 3.8, ease: 'easeInOut', repeat: Infinity, delay: 0.2 }}
       >
-        <img alt="Hero Star Left" src="/svg/star.svg" draggable={false} />
+        <img alt="Hero Star Left" src={asset('/svg/star.svg')} draggable={false} />
       </motion.div>
 
       <motion.div
@@ -46,7 +47,7 @@ export default function HeroSection() {
         animate={{ opacity: [0.75, 0.35, 0.9, 0.45, 0.75] }}
         transition={{ duration: 4.2, ease: 'easeInOut', repeat: Infinity, delay: 0.4 }}
       >
-        <img alt="Hero Star Right" src="/svg/star.svg" draggable={false} />
+        <img alt="Hero Star Right" src={asset('/svg/star.svg')} draggable={false} />
       </motion.div>
 
       <motion.div
@@ -55,7 +56,7 @@ export default function HeroSection() {
         animate={{ opacity: [0.75, 0.25, 0.8, 0.35, 0.75] }}
         transition={{ duration: 3.5, ease: 'easeInOut', repeat: Infinity, delay: 0.3 }}
       >
-        <img alt="Hero Star Bottom" src="/svg/star.svg" draggable={false} />
+        <img alt="Hero Star Bottom" src={asset('/svg/star.svg')} draggable={false} />
       </motion.div>
 
       {/* Mobile Stars */}
@@ -64,21 +65,21 @@ export default function HeroSection() {
         animate={{ opacity: [0.85, 0.3, 0.85] }}
         transition={{ duration: 3.5, ease: 'easeInOut', repeat: Infinity }}
       >
-        <img alt="" src="/svg/star.svg" draggable={false} />
+        <img alt="" src={asset('/svg/star.svg')} draggable={false} />
       </motion.div>
       <motion.div
         className="nce-hero-star-mobile-two"
         animate={{ opacity: [0.7, 0.25, 0.7] }}
         transition={{ duration: 4.0, ease: 'easeInOut', repeat: Infinity, delay: 0.5 }}
       >
-        <img alt="" src="/svg/star.svg" draggable={false} />
+        <img alt="" src={asset('/svg/star.svg')} draggable={false} />
       </motion.div>
       <motion.div
         className="nce-hero-star-mobile-three"
         animate={{ opacity: [0.9, 0.35, 0.9] }}
         transition={{ duration: 3.2, ease: 'easeInOut', repeat: Infinity, delay: 1 }}
       >
-        <img alt="" src="/svg/star.svg" draggable={false} />
+        <img alt="" src={asset('/svg/star.svg')} draggable={false} />
       </motion.div>
 
       {/* ════════════════════════════════════════════════════════════════
@@ -108,7 +109,7 @@ export default function HeroSection() {
           }}
           style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
         >
-          <img alt="Hero Flower Left" src="/svg/flower.svg" draggable={false} style={{ width: '100%', height: '100%' }} />
+          <img alt="Hero Flower Left" src={asset('/svg/flower.svg')} draggable={false} style={{ width: '100%', height: '100%' }} />
         </motion.div>
       </motion.div>
 
@@ -134,7 +135,7 @@ export default function HeroSection() {
           }}
           style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
         >
-          <img alt="Hero Flower Right" src="/svg/flower.svg" draggable={false} style={{ width: '100%', height: '100%' }} />
+          <img alt="Hero Flower Right" src={asset('/svg/flower.svg')} draggable={false} style={{ width: '100%', height: '100%' }} />
         </motion.div>
       </motion.div>
 
@@ -160,7 +161,7 @@ export default function HeroSection() {
           }}
           style={{ width: '100%', height: '100%' }}
         >
-          <img alt="" src="/svg/flower.svg" draggable={false} style={{ width: '100%', height: '100%' }} />
+          <img alt="" src={asset('/svg/flower.svg')} draggable={false} style={{ width: '100%', height: '100%' }} />
         </motion.div>
       </motion.div>
 
@@ -177,7 +178,7 @@ export default function HeroSection() {
           transition={{ delay: 4.4, duration: 2.0, ease: [0.45, 0.05, 0.55, 0.95], repeat: 0 }}
           style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
         >
-          <img alt="Hero Flower Bottom" src="/svg/flower.svg" draggable={false} style={{ width: '100%', height: '100%' }} />
+          <img alt="Hero Flower Bottom" src={asset('/svg/flower.svg')} draggable={false} style={{ width: '100%', height: '100%' }} />
         </motion.div>
       </motion.div>
 
@@ -199,15 +200,15 @@ export default function HeroSection() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.75, ease: 'easeOut', delay: 2.0 }}
           >
-            <img alt="Hero Bottom Leaf" src="/svg/bottomleaf.svg" draggable={false} />
+            <img alt="Hero Bottom Leaf" src={asset('/svg/bottomleaf.svg')} draggable={false} />
           </motion.div>
 
           {/* Mobile Container Stars */}
           <div className="nce-hero-star-mobile-topleft">
-            <img alt="" src="/svg/star.svg" draggable={false} />
+            <img alt="" src={asset('/svg/star.svg')} draggable={false} />
           </div>
           <div className="nce-hero-star-mobile-bottomleft">
-            <img alt="" src="/svg/star.svg" draggable={false} />
+            <img alt="" src={asset('/svg/star.svg')} draggable={false} />
           </div>
 
           {/* Mobile Container Flowers (Steps 5 & 6) */}
@@ -232,7 +233,7 @@ export default function HeroSection() {
               }}
               style={{ width: '100%', height: '100%' }}
             >
-              <img alt="" src="/svg/flower.svg" draggable={false} style={{ width: '100%', height: '100%' }} />
+              <img alt="" src={asset('/svg/flower.svg')} draggable={false} style={{ width: '100%', height: '100%' }} />
             </motion.div>
           </motion.div>
 
@@ -257,7 +258,7 @@ export default function HeroSection() {
               }}
               style={{ width: '100%', height: '100%' }}
             >
-              <img alt="" src="/svg/flower.svg" draggable={false} style={{ width: '100%', height: '100%' }} />
+              <img alt="" src={asset('/svg/flower.svg')} draggable={false} style={{ width: '100%', height: '100%' }} />
             </motion.div>
           </motion.div>
 
@@ -277,7 +278,7 @@ export default function HeroSection() {
                 animate={{ opacity: 1, scale: 1, rotate: 5 }}
                 transition={{ duration: 0.55, ease: [0.34, 1.56, 0.64, 1], delay: 2.45 }}
               >
-                <img alt="Decoration Ribbon" src="/svg/ribbon.webp" draggable={false} />
+                <img alt="Decoration Ribbon" src={asset('/svg/ribbon.webp')} draggable={false} />
               </motion.div>
               <img
                 src={SITE_CONTENT.babyPhoto}

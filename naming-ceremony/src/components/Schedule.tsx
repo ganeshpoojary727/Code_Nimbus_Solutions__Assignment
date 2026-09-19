@@ -1,4 +1,5 @@
-﻿import { useState, useRef } from 'react';
+import { asset } from '../utils/assets';
+import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { TIMELINE_EVENTS } from '../data/content';
 
@@ -57,21 +58,21 @@ export default function Schedule() {
     <section id="nce-schedule-section">
       {/* Static flowers: no animation as requested */}
       <div className="nce-schedule-topflower">
-        <img alt="" src="/svg/flower.svg" draggable={false} />
+        <img alt="" src={asset('/svg/flower.svg')} draggable={false} />
       </div>
       <div className="nce-schedule-bottomflower-one">
-        <img alt="" src="/svg/flower.svg" draggable={false} />
+        <img alt="" src={asset('/svg/flower.svg')} draggable={false} />
       </div>
       <div className="nce-schedule-bottomflower-two">
-        <img alt="" src="/svg/flower.svg" draggable={false} />
+        <img alt="" src={asset('/svg/flower.svg')} draggable={false} />
       </div>
 
       {/* Static leaves */}
       <div className="nce-schedule-bottomleaf">
-        <img alt="" src="/svg/schedulebottomleaf.svg" draggable={false} />
+        <img alt="" src={asset('/svg/schedulebottomleaf.svg')} draggable={false} />
       </div>
       <div className="nce-schedule-topleaf">
-        <img alt="" src="/svg/wishestopleaf.svg" draggable={false} />
+        <img alt="" src={asset('/svg/wishestopleaf.svg')} draggable={false} />
       </div>
 
       <div className="nimbus-container">
@@ -113,18 +114,18 @@ export default function Schedule() {
                     animate={{ opacity: [0.35, 1, 0.35], scale: [0.9, 1.1, 0.9] }}
                     transition={{ duration: 2.8, ease: 'easeInOut', repeat: Infinity, delay: 0.2 }}
                   >
-                    <img alt="" src="/svg/star.svg" draggable={false} />
+                    <img alt="" src={asset('/svg/star.svg')} draggable={false} />
                   </motion.div>
                   <motion.div
                     className="nce-card-star-right"
                     animate={{ opacity: [0.35, 1, 0.35], scale: [0.9, 1.1, 0.9] }}
                     transition={{ duration: 3.2, ease: 'easeInOut', repeat: Infinity, delay: 0.9 }}
                   >
-                    <img alt="" src="/svg/star.svg" draggable={false} />
+                    <img alt="" src={asset('/svg/star.svg')} draggable={false} />
                   </motion.div>
 
                   <div className="nce-card-ribbon">
-                    <img alt="" src="/svg/ribbon.webp" draggable={false} />
+                    <img alt="" src={asset('/svg/ribbon.webp')} draggable={false} />
                   </div>
                   <p className="nce-card-event-name">{event.title}</p>
                   <p className="nce-card-event-time">{event.time}</p>
