@@ -76,36 +76,26 @@ export const AI_WISH_TEMPLATES = [
   'Welcome to the world, little angel! May your life be filled with sweet laughter and love.',
 ];
 
-export interface ScheduleItem {
-  id: number;
-  emoji?: string;
-  name: string;
-  title: string;
-  time: string;
-}
 
 export const TIMELINE_EVENTS = [
-  { id: 1, emoji: '🎀', name: 'Welcome & Gathering', title: 'Welcome & Gathering', time: '10:30 am' },
-  { id: 2, emoji: '🪔', name: 'Namakarana Pooja', title: 'Namakarana Pooja', time: '11:00 am' },
-  { id: 3, emoji: '✨', name: 'Name Reveal & Aarti', title: 'Name Reveal & Aarti', time: '11:45 am' },
-  { id: 4, emoji: '🍽️', name: 'Lunch', title: 'Lunch', time: '12:30 pm' },
+  { id: 1, emoji: '🎀', title: 'Welcome & Gathering', time: '10:30 am' },
+  { id: 2, emoji: '🪔', title: 'Namakarana Pooja', time: '11:00 am' },
+  { id: 3, emoji: '✨', title: 'Name Reveal & Aarti', time: '11:45 am' },
+  { id: 4, emoji: '🍽️', title: 'Lunch', time: '12:30 pm' },
 ];
-
-export const SCHEDULE_ITEMS = TIMELINE_EVENTS;
 
 export interface GalleryImage {
   id: number;
-  src: string;
   url: string;
   alt: string;
   caption: string;
 }
 
 export const GALLERY_IMAGES: GalleryImage[] = [
-  { id: 1, src: '/images/gallery-1.jpg', url: '/images/gallery-1.jpg', alt: 'Baby in traditional outfit', caption: 'Baby in traditional outfit' },
-  { id: 2, src: '/images/gallery-2.jpg', url: '/images/gallery-2.jpg', alt: 'Tiny baby feet', caption: 'Tiny baby feet' },
-  { id: 3, src: '/images/gallery-3.jpg', url: '/images/gallery-3.jpg', alt: 'Family portrait', caption: 'Family portrait' },
-  { id: 4, src: '/images/gallery-4.jpg', url: '/images/gallery-4.jpg', alt: 'Ceremony decorations', caption: 'Ceremony decorations' },
-  { id: 5, src: '/images/gallery-5.jpg', url: '/images/gallery-5.jpg', alt: 'Baby in flower basket', caption: 'Baby in flower basket' },
-  { id: 6, src: '/images/gallery-6.jpg', url: '/images/gallery-6.jpg', alt: 'Celebration sweets', caption: 'Celebration sweets' },
+  { id: 1, url: '/images/gallery-1.jpg', alt: 'Baby in traditional outfit', caption: 'Baby in traditional outfit' },
+  { id: 2, url: '/images/gallery-2.jpg', alt: 'Tiny baby feet', caption: 'Tiny baby feet' },
+  { id: 3, url: '/images/gallery-3.jpg', alt: 'Family portrait', caption: 'Family portrait' },
+  { id: 4, url: '/images/gallery-4.jpg', alt: 'Ceremony decorations', caption: 'Ceremony decorations' },
+  { id: 5, url: '/images/gallery-5.jpg', alt: 'Baby in flower basket', caption: 'Baby in flower basket' },
+  { id: 6, url: '/images/gallery-6.jpg', alt: 'Celebration sweets', caption: 'Celebration sweets' },
 ];
