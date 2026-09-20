@@ -2066,10 +2066,10 @@ textarea {
   gap: 8rem;
   padding: 16px 0;
   padding-bottom: env(safe-area-inset-bottom, 16px);
-  background: #f4e5e38c;
+  background: rgba(244, 229, 227, 0.94);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  box-shadow: 0 -2px 10px #00000014;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   height: 6rem;
 }
 
@@ -2078,24 +2078,28 @@ textarea {
   min-height: unset;
   padding: 0;
   cursor: pointer;
+  text-decoration: none;
 }
 
-.nce-shared-navbar-container,
-.shared-navbar .shared-nav-item .nav-label {
-  font-family: Galada, sans-serif;
-  font-size: 1.8rem;
+.nce-shared-navbar-container .shared-navbar .shared-nav-item .nav-label {
+  font-family: 'Galada', cursive, sans-serif;
+  font-size: 2.1rem;
   font-weight: 400;
   color: #96a29a;
   opacity: 0.8;
   margin-top: 0;
+  letter-spacing: 0.01em;
   transition: color 0.2s ease, opacity 0.2s ease;
 }
 
-.nce-shared-navbar-container,
-.shared-navbar .nce-active .nav-label {
+.nce-shared-navbar-container .shared-navbar .nce-active .nav-label,
+.nce-shared-navbar-container .shared-navbar .active .nav-label,
+.nce-shared-navbar-container .shared-navbar #nav-home.nce-active .nav-label {
   color: #5a7060;
   opacity: 1;
   font-weight: 700;
+  -webkit-text-stroke: 0.45px #5a7060;
+  text-shadow: 0 0 0.5px rgba(90, 112, 96, 0.5);
 }
 
 .nce-shared-navbar-container .shared-nav-item:not(.nce-active):hover .nav-label {
@@ -2110,5 +2114,5 @@ textarea {
     padding-bottom: env(safe-area-inset-bottom, 14px);
   }
 
-  .nce-shared-navbar-container .nav-label { font-size: 1.6rem; }
+  .nce-shared-navbar-container .nav-label { font-size: 1.8rem; }
 }
