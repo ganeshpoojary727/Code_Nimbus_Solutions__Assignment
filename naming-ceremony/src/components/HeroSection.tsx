@@ -5,9 +5,7 @@ import { SITE_CONTENT } from '../data/content';
 export default function HeroSection() {
   return (
     <section id="nce-hero-section">
-      {/* ════════════════════════════════════════════════════════════════
-          DECORATIVE LEAVES — fade in 1s after arch animation completes
-          ════════════════════════════════════════════════════════════════ */}
+      {/* Decorative Leaves */}
 
       {/* Top Leaf (Desktop) — fades in 1s after arch animation completes (arch: 0.8s → leaves at 1.8s) */}
       <motion.div
@@ -29,9 +27,7 @@ export default function HeroSection() {
         <img alt="Hero Right Leaf" src={asset('/svg/rightleaf.svg')} draggable={false} />
       </motion.div>
 
-      {/* ════════════════════════════════════════════════════════════════
-          BACKGROUND STARS (Ambient twinkle)
-          ════════════════════════════════════════════════════════════════ */}
+      {/* Background Stars */}
       <motion.div
         className="nce-hero-star-left"
         initial={{ opacity: 0 }}
@@ -82,10 +78,7 @@ export default function HeroSection() {
         <img alt="" src={asset('/svg/star.svg')} draggable={false} />
       </motion.div>
 
-      {/* ════════════════════════════════════════════════════════════════
-          STEPS 5 & 6: FLOWERS LOAD (SMALL TO BIG at T=3.0s)
-          THEN HALF A SECOND LATER (at T=4.2s), SLOW & SMOOTH 1 ROTATION
-          ════════════════════════════════════════════════════════════════ */}
+      {/* Corner Flowers */}
 
       {/* Left Flower (Desktop) */}
       <motion.div
@@ -182,11 +175,9 @@ export default function HeroSection() {
         </motion.div>
       </motion.div>
 
-      {/* ════════════════════════════════════════════════════════════════
-          MAIN ARCH & CARD SEQUENCE
-          ════════════════════════════════════════════════════════════════ */}
+      {/* Main Card Container */}
       <div className="nimbus-container">
-        {/* STEP 1: Main arch widget fades in smoothly — no scaleY grow, renders at natural size */}
+        {/* Main Arch Animation */}
         <motion.div
           className="nce-hero-container"
           initial={{ opacity: 0, y: 30 }}
@@ -264,14 +255,14 @@ export default function HeroSection() {
 
           {/* Card Content */}
           <div className="nce-hero-content">
-            {/* STEP 2: Child Image fades in (T = 0.7s - 1.3s) */}
+            {/* Baby Portrait */}
             <motion.div
               className="nce-hero-image-wrap"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, ease: 'easeOut', delay: 0.7 }}
             >
-              {/* STEP 4: Ribbon bow animates onto the image (T = 2.45s - 3.0s) */}
+              {/* Ribbon Bow */}
               <motion.div
                 className="nce-hero-ribbon"
                 initial={{ opacity: 0, scale: 0, rotate: -20 }}
@@ -288,7 +279,7 @@ export default function HeroSection() {
               />
             </motion.div>
 
-            {/* STEP 3: All text loaded top to bottom (T = 1.3s - 2.3s) */}
+            {/* Invitation Details */}
             <div className="nce-hero-details">
               {/* Text 1: Invite Line */}
               <motion.p

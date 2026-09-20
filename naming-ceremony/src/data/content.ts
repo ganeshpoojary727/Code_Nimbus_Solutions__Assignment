@@ -1,46 +1,43 @@
-// ════════════════════════════════════════════
-// All editable content for the Naming Ceremony site.
-// Update these constants to personalize the invitation.
-// ════════════════════════════════════════════
+// Editable content for the Naming Ceremony invitation site
 
 import { asset } from '../utils/assets';
 
 export const SITE_CONTENT = {
-  // ── Parents & Baby ──
+  // Parents & Baby
   parentA: 'Mr Nair',
   parentB: 'Mrs Nair',
   babyName: 'Vihaan',
 
-  // ── Event Details ──
+  // Event Details
   date: '6th September 2026',
   time: '11:45 AM',
   // ISO date for countdown calculation
   ceremonyDate: new Date('2026-09-06T11:45:00'),
 
-  // ── Venue ──
+  // Venue
   venueName: 'Hall Complex',
   venueAddress: 'Hall Complex, 1st B Cross Road, 7th Block, Koramangala, Bengaluru, Karnataka, India',
   venueMapQuery: 'Hall+Complex+1st+B+Cross+Road+7th+Block+Koramangala+Bengaluru+Karnataka+India',
 
-  // ── Contact ──
+  // Contact
   phoneNumber: '+919876543210',
 
-  // ── Hero ──
+  // Hero
   heroInviteLine: 'warmly invite you to the',
   heroSubtitle: 'of their New born baby',
 
-  // ── Warm Invite ──
+  // Warm Invite
   warmInviteMessage:
     'With hearts overflowing with gratitude and joy, Mr & Mrs Nair joyfully invite you to the naming ceremony of their little blessing. Come, celebrate this beautiful milestone with us, and shower our little Vihaan with your warmest wishes and love.',
 
-  // ── Images ──
+  // Images
   babyPhoto: asset('/images/baby.jpg'),
   venuePhoto: asset('/images/venue.jpg'),
 
-  // ── Video ──
+  // Video
   youtubeEmbedUrl: 'https://www.youtube.com/embed/BWAnHej2vH8',
 
-  // ── Music ──
+  // Music
   musicSrc: "https://cdn-user.invitationnation.in/music/Can't+Help+Falling+in+Love+(Instrumental).mp3",
 };
 
