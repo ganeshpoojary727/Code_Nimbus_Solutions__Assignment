@@ -2083,12 +2083,11 @@ textarea {
 
 .nce-shared-navbar-container .shared-navbar .shared-nav-item .nav-label {
   font-family: 'Galada', cursive, sans-serif;
-  font-size: 2.1rem;
+  font-size: 1.8rem;
   font-weight: 400;
   color: #96a29a;
   opacity: 0.8;
   margin-top: 0;
-  letter-spacing: 0.01em;
   transition: color 0.2s ease, opacity 0.2s ease;
 }
 
@@ -2098,8 +2097,6 @@ textarea {
   color: #5a7060;
   opacity: 1;
   font-weight: 700;
-  -webkit-text-stroke: 0.45px #5a7060;
-  text-shadow: 0 0 0.5px rgba(90, 112, 96, 0.5);
 }
 
 .nce-shared-navbar-container .shared-nav-item:not(.nce-active):hover .nav-label {
