@@ -11,7 +11,7 @@ const COUNTDOWN_STARS = [
   { id: '5', style: { top: '85%', left: '30%', width: '3.5rem' } },
 ];
 
-// STAGE 1: Minimal up-and-down bounce entrance (0.0s - 0.8s)
+// Ribbon and title entrance variants
 const ribbonVariants: Variants = {
   hidden: { opacity: 0, y: -45 },
   visible: {
@@ -36,7 +36,7 @@ const titleVariants: Variants = {
   },
 };
 
-// STAGE 2: 3D Flip Card animation starting right after Stage 1 (0.75s+)
+// 3D flip card variants
 const cardVariants: Variants = {
   hidden: { rotateY: 0 },
   visible: (idx: number) => ({
@@ -49,7 +49,7 @@ const cardVariants: Variants = {
   }),
 };
 
-// STAGE 3: Flowers pop up small-to-big right after numbers finish, NO rotation (1.95s+)
+// Flower entrance variants
 const flower1Variants: Variants = {
   hidden: { opacity: 0, scale: 0 },
   visible: {

@@ -42,7 +42,7 @@ export default function SendWishes({ onSubmit }: SendWishesProps) {
 
   return (
     <section id="nce-sendwishes-section">
-      {/* Static flowers: no animation as requested */}
+      {/* Decorative flowers */}
       <div className="nce-sendwishes-topflower">
         <img alt="" src={asset('/svg/flower.svg')} draggable={false} />
       </div>
@@ -53,7 +53,7 @@ export default function SendWishes({ onSubmit }: SendWishesProps) {
         <img alt="" src={asset('/svg/flower.svg')} draggable={false} />
       </div>
 
-      {/* Animated stars: get bright and get vanished operating with opacity */}
+      {/* Background stars */}
       <motion.div
         className="nce-sendwishes-leftstar"
         animate={{ opacity: [0, 1, 0] }}
@@ -95,7 +95,7 @@ export default function SendWishes({ onSubmit }: SendWishesProps) {
           <p className="nce-sendwishes-title">Send your wishes</p>
 
           <div className="nce-sendwishes-content">
-            {/* Boundary starts small and smoothly expands to full size */}
+            {/* Frame container */}
             <motion.img
               alt=""
               className="nce-sendwishes-tomb"

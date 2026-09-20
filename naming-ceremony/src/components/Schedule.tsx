@@ -56,7 +56,7 @@ export default function Schedule() {
 
   return (
     <section id="nce-schedule-section">
-      {/* Static flowers: no animation as requested */}
+      {/* Decorative flowers */}
       <div className="nce-schedule-topflower">
         <img alt="" src={asset('/svg/flower.svg')} draggable={false} />
       </div>
@@ -67,7 +67,7 @@ export default function Schedule() {
         <img alt="" src={asset('/svg/flower.svg')} draggable={false} />
       </div>
 
-      {/* Static leaves */}
+      {/* Decorative leaves */}
       <div className="nce-schedule-bottomleaf">
         <img alt="" src={asset('/svg/schedulebottomleaf.svg')} draggable={false} />
       </div>
@@ -77,7 +77,7 @@ export default function Schedule() {
 
       <div className="nimbus-container">
         <div className="nce-schedule-container">
-          {/* Normal schedule text entrance animation */}
+          {/* Schedule heading */}
           <motion.p
             className="nce-schedule-title"
             initial={{ opacity: 0, y: 20 }}
@@ -108,7 +108,7 @@ export default function Schedule() {
                   className={`nce-schedule-card ${idx === activeIndex ? 'active' : ''}`}
                   onClick={() => setActiveIndex(idx)}
                 >
-                  {/* Star animation in every widget */}
+                  {/* Timeline card star */}
                   <motion.div
                     className="nce-card-star-left"
                     animate={{ opacity: [0.35, 1, 0.35], scale: [0.9, 1.1, 0.9] }}

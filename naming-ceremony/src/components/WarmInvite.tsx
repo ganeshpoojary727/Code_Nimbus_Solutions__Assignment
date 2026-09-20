@@ -26,7 +26,7 @@ export default function WarmInvite() {
         <img alt="" src={asset('/svg/wishesbottomleaf.svg')} draggable={false} />
       </motion.div>
 
-      {/* Top Flower (Right Top) — slowly becomes bigger after main widget animation */}
+      {/* Top flower */}
       <motion.div
         className="nce-warminvite-topflower"
         initial={{ opacity: 0, scale: 0 }}

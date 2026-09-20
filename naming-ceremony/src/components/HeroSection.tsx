@@ -7,7 +7,7 @@ export default function HeroSection() {
     <section id="nce-hero-section">
       {/* Decorative Leaves */}
 
-      {/* Top Leaf (Desktop) — fades in 1s after arch animation completes (arch: 0.8s → leaves at 1.8s) */}
+      {/* Top leaf */}
       <motion.div
         className="nce-hero-topleaf"
         initial={{ opacity: 0 }}
@@ -17,7 +17,7 @@ export default function HeroSection() {
         <img alt="Hero Top Leaf" src={asset('/svg/topleaf.svg')} draggable={false} />
       </motion.div>
 
-      {/* Right Leaf (Desktop) */}
+      {/* Right leaf */}
       <motion.div
         className="nce-hero-rightleaf"
         initial={{ opacity: 0 }}
@@ -80,7 +80,7 @@ export default function HeroSection() {
 
       {/* Corner Flowers */}
 
-      {/* Left Flower (Desktop) */}
+      {/* Left flower */}
       <motion.div
         className="nce-hero-flower-left"
         initial={{ opacity: 0, scale: 0 }}
@@ -95,7 +95,7 @@ export default function HeroSection() {
           initial={{ rotate: 0 }}
           animate={{ rotate: 360 }}
           transition={{
-            delay: 4.2, // exactly 0.5s after loading completes (3.0 + 0.7 + 0.5 = 4.2s)
+            delay: 4.2,
             duration: 2.0,
             ease: [0.45, 0.05, 0.55, 0.95],
             repeat: 0,
@@ -106,7 +106,7 @@ export default function HeroSection() {
         </motion.div>
       </motion.div>
 
-      {/* Right Flower (Desktop) */}
+      {/* Right flower */}
       <motion.div
         className="nce-hero-flower-right"
         initial={{ opacity: 0, scale: 0 }}
@@ -121,7 +121,7 @@ export default function HeroSection() {
           initial={{ rotate: 0 }}
           animate={{ rotate: 360 }}
           transition={{
-            delay: 4.3, // exactly 0.5s after loading completes (3.1 + 0.7 + 0.5 = 4.3s)
+            delay: 4.3,
             duration: 2.0,
             ease: [0.45, 0.05, 0.55, 0.95],
             repeat: 0,
@@ -158,7 +158,7 @@ export default function HeroSection() {
         </motion.div>
       </motion.div>
 
-      {/* Bottom-Right Flower (Desktop) — partially visible at right-bottom corner, like original site */}
+      {/* Bottom flower */}
       <motion.div
         className="nce-hero-flower-bottom"
         initial={{ opacity: 0, scale: 0 }}
@@ -184,7 +184,7 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
         >
-          {/* Bottom leaf fades in 1s after arch completes (T = 1.8s stagger, sequence delay 2.0s) */}
+          {/* Bottom leaf */}
           <motion.div
             className="nce-hero-bottomleaf"
             initial={{ opacity: 0 }}
@@ -202,7 +202,7 @@ export default function HeroSection() {
             <img alt="" src={asset('/svg/star.svg')} draggable={false} />
           </div>
 
-          {/* Mobile Container Flowers (Steps 5 & 6) */}
+          {/* Mobile flowers */}
           <motion.div
             className="nce-hero-flower-mobile-topright"
             initial={{ opacity: 0, scale: 0 }}
@@ -281,7 +281,7 @@ export default function HeroSection() {
 
             {/* Invitation Details */}
             <div className="nce-hero-details">
-              {/* Text 1: Invite Line */}
+              {/* Invite line */}
               <motion.p
                 className="nce-hero-invite"
                 initial={{ opacity: 0, y: 15 }}
@@ -291,7 +291,7 @@ export default function HeroSection() {
                 Mr &amp; Mrs Nair {SITE_CONTENT.heroInviteLine}
               </motion.p>
 
-              {/* Text 2: Title */}
+              {/* Title */}
               <motion.h1
                 className="nce-hero-title"
                 initial={{ opacity: 0, y: 15 }}
@@ -301,7 +301,7 @@ export default function HeroSection() {
                 Naming Ceremony
               </motion.h1>
 
-              {/* Text 3: Subtitle */}
+              {/* Subtitle */}
               <motion.p
                 className="nce-hero-sub"
                 initial={{ opacity: 0, y: 15 }}
@@ -312,7 +312,7 @@ export default function HeroSection() {
               </motion.p>
             </div>
 
-            {/* Text 4: Date Block */}
+            {/* Date and time */}
             <motion.div
               className="nce-hero-date"
               initial={{ opacity: 0, y: 15 }}
@@ -322,7 +322,7 @@ export default function HeroSection() {
               <p>{SITE_CONTENT.date} | {SITE_CONTENT.time}</p>
             </motion.div>
 
-            {/* Text 5: Location & Open in Maps Button */}
+            {/* Location & maps button */}
             <motion.div
               className="nce-hero-location"
               initial={{ opacity: 0, y: 15 }}

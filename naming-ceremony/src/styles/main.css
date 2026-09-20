@@ -8,9 +8,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Fjalla+One&family=Flamenco:wght@300;400;800&family=Galada&family=Manrope:wght@400;500;600;700&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 
 
-/* ============================================================
-   RESET & BASE
-   ============================================================ */
+/* Reset & Base */
 
 * {
   margin: 0;
@@ -51,9 +49,7 @@ html {
 }
 
 
-/* ============================================================
-   SHARED FOOTER
-   ============================================================ */
+/* Shared Footer */
 
 .shared-footer-main {
   --sf-font-merriweather: "Merriweather", serif;
@@ -222,9 +218,7 @@ html {
 
 
 
-/* ============================================================
-   FLOATING ACTION BUTTONS  (Music & Call)
-   ============================================================ */
+/* Floating Action Buttons (Music & Call) */
 
 #music-btn-main {
   position: fixed;
@@ -278,9 +272,7 @@ html {
 }
 
 
-/* ============================================================
-   SECTION: HERO
-   ============================================================ */
+/* Section: Hero */
 
 #nce-hero-section {
   position: relative;
@@ -444,7 +436,7 @@ html {
   transform: translateY(-0.0625rem);
 }
 
-/* ── Leaves ─────────────────────────────────────────────── */
+/* Leaves */
 
 .nce-hero-topleaf {
   position: absolute;
@@ -480,7 +472,7 @@ html {
   width: 30%;
 }
 
-/* ── Flowers ─────────────────────────────────────────────── */
+/* Flowers */
 
 .nce-hero-flower-left {
   position: absolute;
@@ -509,7 +501,7 @@ html {
   pointer-events: none;
 }
 
-/* ── Stars ───────────────────────────────────────────────── */
+/* Stars */
 
 .nce-hero-star-left {
   position: absolute;
@@ -552,7 +544,7 @@ html {
   display: block;
 }
 
-/* ── Mobile-only elements (hidden on desktop) ─────────────── */
+/* Mobile elements */
 
 .nce-hero-star-mobile-one,
 .nce-hero-star-mobile-two,
@@ -619,7 +611,7 @@ html {
   }
 }
 
-/* ── Short-viewport override (e.g. landscape phones) ────────── */
+/* Short viewport overrides */
 
 @media (max-height: 650px) {
   .nce-hero-container {
@@ -663,9 +655,7 @@ html {
 }
 
 
-/* ============================================================
-   SECTION: COUNTDOWN
-   ============================================================ */
+/* Section: Countdown */
 
 #nce-countDown {
   position: relative;
@@ -901,9 +891,7 @@ html {
 }
 
 
-/* ============================================================
-   SECTION: WARM INVITE
-   ============================================================ */
+/* Section: Warm Invite */
 
 #nce-warm-invite-section {
   position: relative;
@@ -1011,9 +999,7 @@ html {
 }
 
 
-/* ============================================================
-   SECTION: LOCATION / VENUE
-   ============================================================ */
+/* Section: Location / Venue */
 
 #nce-location-section {
   position: relative;
@@ -1196,9 +1182,7 @@ html {
 }
 
 
-/* ============================================================
-   SECTION: WISHES CAROUSEL
-   ============================================================ */
+/* Section: Wishes Carousel */
 
 #nce-wishes-section {
   position: relative;
@@ -1381,9 +1365,7 @@ html {
 .nce-wishes-innerstar-two img { pointer-events: none; width: 100%; display: block; }
 
 
-/* ============================================================
-   SECTION: SEND WISHES (FORM)
-   ============================================================ */
+/* Section: Send Wishes */
 
 #nce-sendwishes-section {
   position: relative;
@@ -1593,9 +1575,7 @@ html {
 }
 
 
-/* ============================================================
-   SECTION: SCHEDULE
-   ============================================================ */
+/* Section: Schedule */
 
 #nce-schedule-section {
   position: relative;
@@ -1760,9 +1740,7 @@ html {
 .nce-card-star-right img { width: 100%; height: auto; display: block; }
 
 
-/* ============================================================
-   SECTION: VIDEO
-   ============================================================ */
+/* Section: Video */
 
 #nce-video-section {
   position: relative;
@@ -1814,9 +1792,7 @@ html {
 }
 
 
-/* ============================================================
-   SECTION: GALLERY
-   ============================================================ */
+/* Section: Gallery */
 
 #nce-gallery-section {
   position: relative;
@@ -1965,9 +1941,7 @@ html {
 
 
 
-/* ============================================================
-   WISHER FORM  (embedded wish submission widget)
-   ============================================================ */
+/* Wisher Form */
 
 .Wisher-Section {
   position: relative;
@@ -2043,9 +2017,7 @@ textarea {
 .wisher-button { width: 100%; padding: 0.5rem; }
 
 
-/* ============================================================
-   NAVBAR  (fixed top, nce theme)
-   ============================================================ */
+/* Navbar */
 
 .nce-shared-navbar-container {
   position: fixed;

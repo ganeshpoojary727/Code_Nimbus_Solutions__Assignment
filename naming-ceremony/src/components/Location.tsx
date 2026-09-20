@@ -33,7 +33,7 @@ export default function Location() {
 
       <div className="nce-location-container">
         <div className="nce-location-content">
-          {/* Near left side flower: blooms right as flip settles, in sync with title */}
+          {/* Left flower */}
           <motion.div
             className="nce-location-flower-one"
             initial={{ opacity: 0, scale: 0.7 }}
@@ -51,8 +51,8 @@ export default function Location() {
             <img alt="" src={asset('/svg/star.svg')} draggable={false} />
           </motion.div>
 
-          {/* Series of text animations after the flip */}
-          {/* 1. Title */}
+          {/* Venue details */}
+          {/* Venue title */}
           <motion.h2
             className="nce-location-title"
             initial={{ opacity: 0, y: 25 }}
@@ -62,7 +62,7 @@ export default function Location() {
             {SITE_CONTENT.venueName}
           </motion.h2>
 
-          {/* 2. Description (staggered) */}
+          {/* Venue description */}
           <motion.p
             className="nce-location-description"
             initial={{ opacity: 0, y: 25 }}
@@ -72,7 +72,7 @@ export default function Location() {
             {SITE_CONTENT.venueAddress}
           </motion.p>
 
-          {/* 3. Button (staggered) */}
+          {/* Map button */}
           <motion.a
             href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(SITE_CONTENT.venueMapQuery)}`}
             target="_blank"
@@ -102,7 +102,7 @@ export default function Location() {
         <div className="nce-location-design">
           <img alt="" className="design-svg" src={asset('/svg/locationdesign.svg')} draggable={false} />
           <div className="nce-location-frame" ref={frameRef}>
-            {/* Big bow ribbon: starts visible, flips horizontally (rotateY) on scroll */}
+            {/* Ribbon flip animation */}
             <motion.img
               alt=""
               className="nce-location-ribbon"
@@ -113,7 +113,7 @@ export default function Location() {
               transition={{ duration: 1.6, ease: [0.45, 0, 0.55, 1] }}
               style={{ backfaceVisibility: 'hidden' }}
             />
-            {/* Round venue photo: reveals as ribbon turns past 90deg */}
+            {/* Venue photo reveal */}
             <motion.img
               alt=""
               className="nce-location-photo"
