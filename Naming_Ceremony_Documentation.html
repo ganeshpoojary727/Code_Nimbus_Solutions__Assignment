@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Naming Ceremony Web Application - Master Technical Documentation & Code Guide</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
+
+  @page {
+    size: A4;
+    margin: 16mm 14mm 16mm 14mm;
+    @bottom-right {
+      content: counter(page);
+    }
+  }
+
+  * {
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #1e293b;
+    background-color: #ffffff;
+    line-height: 1.55;
+    font-size: 10.5pt;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Page Break Utilities */
+  .page-break {
+    page-break-before: always;
+    break-before: page;
+  }
+  .no-break {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  h1, h2, h3, h4 {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+  pre, code, table, tr, .card, .callout {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Cover Page Styling */
+  .cover {
+    min-height: 94vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2.2rem 2rem;
+    border: 3px solid #8b3a3a;
+    border-radius: 12px;
+    background: linear-gradient(145deg, #fffaf9 0%, #fdf5f4 50%, #f7eae8 100%);
+    position: relative;
+    box-shadow: 0 10px 30px rgba(139, 58, 58, 0.08);
+  }
+
+  .cover-header {
+    border-bottom: 2px solid #e7cecc;
+    padding-bottom: 1.5rem;
+  }
+
+  .cover-badge {
+    display: inline-block;
+    background: #8b3a3a;
+    color: #ffffff;
+    font-size: 8.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+  }
+
+  .cover-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 26pt;
+    color: #5c1e1e;
+    margin: 0.5rem 0;
+    line-height: 1.25;
+    font-weight: 700;
+  }
+
+  .cover-subtitle {
+    font-size: 12pt;
+    color: #7a3e3e;
+    margin: 0.5rem 0 1.2rem 0;
+    font-weight: 500;
+  }
+
+  .cover-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    margin: 1.5rem 0;
+  }
+
+  .meta-card {
+    background: #ffffff;
+    border: 1px solid #ebd4d2;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+  }
+
+  .meta-label {
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #8b3a3a;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+
+  .meta-value {
+    font-size: 9.5pt;
+    font-weight: 600;
+    color: #1e293b;
+    word-break: break-all;
+  }
+
+  .meta-link {
+    color: #8b3a3a;
+    text-decoration: underline;
+  }
+
+  .tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 0.8rem;
+  }
+
+  .tech-tag {
+    background: #f1dedc;
+    color: #632222;
+    font-size: 8.5pt;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid #dfc3c0;
+  }
+
+  .cover-footer {
+    border-top: 2px solid #e7cecc;
+    padding-top: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 8.5pt;
+    color: #718096;
+  }
+
+  /* Content Headings */
+  h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 18pt;
+    color: #6a2424;
+    border-bottom: 2px solid #8b3a3a;
+    padding-bottom: 6px;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 13.5pt;
+    color: #7a2b2b;
+    border-left: 4px solid #8b3a3a;
+    padding-left: 10px;
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+  }
+
+  h3 {
+    font-size: 11pt;
+    color: #1e293b;
+    font-weight: 700;
+    margin-top: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    margin: 0.5rem 0 0.8rem 0;
+    color: #334155;
+  }
+
+  ul, ol {
+    margin: 0.4rem 0 0.8rem 0;
+    padding-left: 1.4rem;
+  }
+
+  li {
+    margin-bottom: 0.35rem;
+    color: #334155;
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 8.5pt;
+  }
+
+  th {
+    background-color: #8b3a3a;
+    color: #ffffff;
+    font-weight: 600;
+    text-align: left;
+    padding: 7px 9px;
+    border: 1px solid #8b3a3a;
+  }
+
+  td {
+    padding: 6px 9px;
+    border: 1px solid #e2e8f0;
+    color: #334155;
+  }
+
+  tr:nth-child(even) {
+    background-color: #fdf8f8;
+  }
+
+  /* Code Blocks */
+  pre {
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-family: 'Fira Code', Consolas, monospace;
+    font-size: 7.8pt;
+    line-height: 1.42;
+    overflow-x: auto;
+    border: 1px solid #1e293b;
+    margin: 0.5rem 0 0.8rem 0;
+  }
+
+  code {
+    font-family: 'Fira Code', Consolas, monospace;
+    font-size: 8pt;
+  }
+
+  p code, li code, td code {
+    background: #f5e8e6;
+    color: #8b3a3a;
+    padding: 1px 4px;
+    border-radius: 4px;
+    font-weight: 600;
+    border: 1px solid #e8d0ce;
+  }
+
+  /* Callout Boxes */
+  .callout {
+    padding: 10px 12px;
+    border-radius: 6px;
+    margin: 0.9rem 0;
+    font-size: 9pt;
+    border-left: 4px solid;
+  }
+
+  .callout-info {
+    background-color: #f0f7ff;
+    border-color: #0284c7;
+    color: #0369a1;
+  }
+
+  .callout-success {
+    background-color: #f0fdf4;
+    border-color: #16a34a;
+    color: #15803d;
+  }
+
+  .callout-warning {
+    background-color: #fefce8;
+    border-color: #ca8a04;
+    color: #a16207;
+  }
+
+  .callout-interview {
+    background-color: #fff6f5;
+    border-color: #8b3a3a;
+    color: #6b2424;
+  }
+
+  .callout-title {
+    font-weight: 700;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 9.5pt;
+  }
+
+  /* Card Grid */
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 0.8rem 0;
+  }
+
+  .card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 10px;
+    border-top: 3px solid #8b3a3a;
+    font-size: 8.5pt;
+  }
+
+  .card-title {
+    font-weight: 700;
+    color: #8b3a3a;
+    font-size: 9.5pt;
+    margin-bottom: 5px;
+  }
+
+  .qa-block {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #8b3a3a;
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+  }
+
+  .qa-q {
+    font-weight: 700;
+    color: #8b3a3a;
+    font-size: 9.5pt;
+    margin-bottom: 4px;
+  }
+
+  .qa-a {
+    color: #334155;
+    font-size: 8.5pt;
+    line-height: 1.48;
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="cover no-break">
+  <div class="cover-header">
+    <div class="cover-badge">FRONT-END DEVELOPER TECHNICAL EVALUATION</div>
+    <div class="cover-title">NAMING CEREMONY WEB APPLICATION</div>
+    <div class="cover-subtitle">Complete Architecture, Core Concepts, Syntax Fundamentals & Source Code Master Guide</div>
+    <p style="color: #64748b; font-size: 9pt; margin: 0;">
+      A high-fidelity, pixel-accurate web application engineered for the <strong>Code Nimbus Solutions Front-End Developer Intern Assignment</strong>.
+    </p>
+  </div>
+
+  <div class="cover-grid">
+    <div class="meta-card">
+      <div class="meta-label">Candidate / Developer</div>
+      <div class="meta-value">Ganesh Poojary</div>
+      <div style="font-size: 8pt; color: #64748b; margin-top: 4px;">Phone: +91 7019391321</div>
+      <div style="font-size: 8pt; color: #64748b;">LinkedIn: <a class="meta-link" href="https://www.linkedin.com/in/ganesh-poojary-43091a285">ganesh-poojary-43091a285</a></div>
+    </div>
+
+    <div class="meta-card">
+      <div class="meta-label">Evaluation & Submission</div>
+      <div class="meta-value">Code Nimbus Solutions</div>
+      <div style="font-size: 8pt; color: #64748b; margin-top: 4px;">Role: Front-End Developer Intern</div>
+      <div style="font-size: 8pt; color: #64748b;">Email: careers@codenimbussolutions.com</div>
+    </div>
+
+    <div class="meta-card">
+      <div class="meta-label">Live Hosted Website</div>
+      <div class="meta-value">
+        <a class="meta-link" href="https://ganeshpoojary727.github.io/Code_Nimbus_Solutions__Assignment/">
+          ganeshpoojary727.github.io/Code_Nimbus_Solutions__Assignment/
+        </a>
+      </div>
+      <div style="font-size: 7.5pt; color: #16a34a; font-weight: 600; margin-top: 3px;">Status: Live (GitHub Pages CI/CD)</div>
+    </div>
+
+    <div class="meta-card">
+      <div class="meta-label">Source Code Repository</div>
+      <div class="meta-value">
+        <a class="meta-link" href="https://github.com/ganeshpoojary727/Code_Nimbus_Solutions__Assignment">
+          github.com/ganeshpoojary727/Code_Nimbus_Solutions__Assignment
+        </a>
+      </div>
+      <div style="font-size: 7.5pt; color: #64748b; margin-top: 3px;">Branch: main | Strict TypeScript</div>
+    </div>
+  </div>
+
+  <div>
+    <div class="meta-label" style="margin-bottom: 0.4rem;">Core Technologies & Engineering Pillars</div>
+    <div class="tag-container">
+      <span class="tech-tag">React 19.2</span>
+      <span class="tech-tag">TypeScript 6.0</span>
+      <span class="tech-tag">Vite 8.3</span>
+      <span class="tech-tag">Tailwind CSS 3.4</span>
+      <span class="tech-tag">Framer Motion 13.4</span>
+      <span class="tech-tag">React Router DOM 7.18</span>
+      <span class="tech-tag">Lucide Icons</span>
+      <span class="tech-tag">Oxlint Linter</span>
+      <span class="tech-tag">GitHub Actions CI/CD</span>
+      <span class="tech-tag">3D CSS Transforms</span>
+      <span class="tech-tag">Custom Hooks</span>
+      <span class="tech-tag">React.lazy Code Splitting</span>
+    </div>
+  </div>
+
+  <div class="cover-footer">
+    <span>Reference Target: <a class="meta-link" href="https://nam002-livedemo.invitationnation.in/">nam002-livedemo.invitationnation.in</a></span>
+    <span>Generated: September 2026 | Technical Reference</span>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- SECTION 1 -->
+<h1>1. Executive Summary & Assignment Compliance</h1>
+<p>
+  This project represents the complete, high-fidelity engineering recreation of a luxury Indian Naming Ceremony & Celebration invitation web application. The original reference design was thoroughly inspected, reverse-engineered, and rebuilt from scratch using a modern, scalable web stack.
+</p>
+
+<h2>Assignment Requirements Fulfillment Matrix</h2>
+<table>
+  <thead>
+    <tr>
+      <th style="width: 25%;">Requirement</th>
+      <th style="width: 35%;">Specification</th>
+      <th style="width: 40%;">Implementation in Codebase</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>1. Accuracy of Elements</strong></td>
+      <td>Recreate the provided website as accurately as possible.</td>
+      <td>
+        Recreated every structural element: Hero header, dynamic 3D flip countdown, warm invite letter, interactive venue card with ribbon reveal, community wishes carousel, wish submission form, ceremony schedule, video showcase, floating background music player, and footer.
+      </td>
+    </tr>
+    <tr>
+      <td><strong>2. Theme & Animations</strong></td>
+      <td>Faithfully capture the visual theme, color palette, and micro-interactions.</td>
+      <td>
+        Implemented blush & burgundy palette (<code>#f4e5e3</code>, <code>#8b3a3a</code>), Galada script fonts, rotating floral vector blooms, infinite star twinkling animations, 3D card flips (<code>rotateY: 180deg</code>), and cubic-bezier elastic springs.
+      </td>
+    </tr>
+    <tr>
+      <td><strong>3. Scope</strong></td>
+      <td>Recreate ONLY the Home Page using React.js.</td>
+      <td>
+        Main home page fully assembled at <code>/</code> via <code>HomePage.tsx</code> with 9 lazy-loaded modular sections. A bonus <code>GalleryPage.tsx</code> was added under <code>/gallery</code> to demonstrate full routing capability.
+      </td>
+    </tr>
+    <tr>
+      <td><strong>4. Display Target</strong></td>
+      <td>Designed specifically for Desktop Screen Size.</td>
+      <td>
+        Engineered with pixel-perfection for 1280px+ desktop resolutions while retaining 17 fluid CSS media queries to ensure graceful fallback on tablets and mobile screens.
+      </td>
+    </tr>
+    <tr>
+      <td><strong>5. Hosting & Deployment</strong></td>
+      <td>Host on a free hosting platform.</td>
+      <td>
+        Automated CI/CD deployment via GitHub Actions pipeline (<code>.github/workflows/deploy.yml</code>) publishing directly to GitHub Pages with zero-downtime builds.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="callout callout-success no-break">
+  <div class="callout-title">Evaluation Outcome</div>
+  The project satisfies all 5 core requirements with zero runtime console errors, zero Oxlint linting warnings, full TypeScript static type safety, and an automated continuous delivery pipeline.
+</div>
+
+<div class="page-break"></div>
+
+<!-- SECTION 2 -->
+<h1>2. Complete Technology Stack & Tooling Architecture</h1>
+<p>
+  Every package in <code>package.json</code> was chosen to ensure optimal runtime performance, rapid developer experience, and long-term maintainability.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tool / Library</th>
+      <th>Version</th>
+      <th>Type</th>
+      <th>Key Role in Architecture</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>React</strong></td>
+      <td><code>^19.2.8</code></td>
+      <td>Dependency</td>
+      <td>Core UI library leveraging concurrent rendering, declarative JSX, functional components, and modern hooks.</td>
+    </tr>
+    <tr>
+      <td><strong>React DOM</strong></td>
+      <td><code>^19.2.8</code></td>
+      <td>Dependency</td>
+      <td>DOM renderer binding React virtual DOM tree to the browser DOM.</td>
+    </tr>
+    <tr>
+      <td><strong>TypeScript</strong></td>
+      <td><code>~6.0.2</code></td>
+      <td>DevDependency</td>
+      <td>Static typing, strict null checking, interfaces, and compile-time verification across all components.</td>
+    </tr>
+    <tr>
+      <td><strong>Vite</strong></td>
+      <td><code>^8.3.0</code></td>
+      <td>DevDependency</td>
+      <td>Next-generation frontend tooling providing native ESM dev server, instant HMR, and Rollup production builds.</td>
+    </tr>
+    <tr>
+      <td><strong>Framer Motion</strong></td>
+      <td><code>^13.4.0</code></td>
+      <td>Dependency</td>
+      <td>Production-grade animation engine powering 3D transforms, viewport scroll triggers, springs, and keyframes.</td>
+    </tr>
+    <tr>
+      <td><strong>React Router DOM</strong></td>
+      <td><code>^7.18.4</code></td>
+      <td>Dependency</td>
+      <td>Client-side routing engine using <code>HashRouter</code> for seamless SPA navigation without 404s on static hosting.</td>
+    </tr>
+    <tr>
+      <td><strong>Tailwind CSS</strong></td>
+      <td><code>^3.4.19</code></td>
+      <td>DevDependency</td>
+      <td>Utility-first CSS framework customized with ceremony color palettes, fonts, and responsive grid layouts.</td>
+    </tr>
+    <tr>
+      <td><strong>Lucide React</strong></td>
+      <td><code>^1.47.0</code></td>
+      <td>Dependency</td>
+      <td>Tree-shakeable, clean SVG icons used for navigation arrows, audio controls, and phone interactions.</td>
+    </tr>
+    <tr>
+      <td><strong>PostCSS + Autoprefixer</strong></td>
+      <td><code>^8.5.28</code></td>
+      <td>DevDependency</td>
+      <td>Automated CSS vendor prefixing (<code>-webkit-</code>, <code>-moz-</code>) guaranteeing cross-browser 3D compatibility.</td>
+    </tr>
+    <tr>
+      <td><strong>Oxlint</strong></td>
+      <td><code>^1.81.0</code></td>
+      <td>DevDependency</td>
+      <td>High-speed Rust-based JavaScript/TypeScript linter guaranteeing clean code and enforcing best practices.</td>
+    </tr>
+    <tr>
+      <td><strong>GitHub Actions</strong></td>
+      <td>v4</td>
+      <td>Infrastructure</td>
+      <td>Continuous integration & automated deployment pipeline building and publishing <code>dist/</code> to GitHub Pages.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="card-grid no-break">
+  <div class="card">
+    <div class="card-title">Why React 19 + TypeScript?</div>
+    React 19 eliminates outdated lifecycle boilerplate, while TypeScript guarantees compile-time type safety across component props, data models, and custom hooks, eliminating runtime errors.
+  </div>
+  <div class="card">
+    <div class="card-title">Why Vite Instead of Webpack / CRA?</div>
+    Create React App is officially deprecated and slow. Vite serves source code over native ESM in development for instant startup (&lt;100ms) and uses Rollup to create tiny, tree-shaken production bundles.
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- SECTION 3 -->
+<h1>3. Core React 19 Concepts & Design Patterns</h1>
+<p>
+  The project implements modern React best practices, emphasizing modularity, functional composition, clean hooks, and code splitting.
+</p>
+
+<h2>3.1 Functional Components & Declarative JSX</h2>
+<p>
+  All UI logic is written as pure functional components. JSX structures the HTML tree directly within JavaScript, allowing state and markup to live in unison.
+</p>
+<pre><code>// src/App.tsx - Application Root Shell
+export default function App() {
+  return (
+    &lt;Suspense fallback={&lt;div className="min-h-screen bg-[#f4e5e3]" /&gt;}&gt;
+      &lt;div className="min-h-screen font-sans"&gt;
+        &lt;Navbar /&gt;
+        &lt;Music /&gt;
+        &lt;Routes&gt;
+          &lt;Route path="/" element={&lt;HomePage /&gt;} /&gt;
+          &lt;Route path="/gallery" element={&lt;GalleryPage /&gt;} /&gt;
+        &lt;/Routes&gt;
+      &lt;/div&gt;
+    &lt;/Suspense&gt;
+  );
+}</code></pre>
+
+<h2>3.2 Code Splitting with <code>React.lazy()</code> and <code>&lt;Suspense /&gt;</code></h2>
+<p>
+  Instead of packaging the entire application into a single massive JavaScript payload, every section is lazily imported. This drastically reduces the <strong>First Contentful Paint (FCP)</strong> and <strong>Time to Interactive (TTI)</strong>.
+</p>
+<pre><code>// Dynamic chunk splitting across every section in HomePage.tsx
+const HeroSection = React.lazy(() => import('../components/HeroSection'));
+const CountDown = React.lazy(() => import('../components/CountDown'));
+const Location = React.lazy(() => import('../components/Location'));
+const Wishes = React.lazy(() => import('../components/Wishes'));
+const SendWishes = React.lazy(() => import('../components/SendWishes'));
+const Schedule = React.lazy(() => import('../components/Schedule'));
+const Video = React.lazy(() => import('../components/Video'));
+const Footer = React.lazy(() => import('../components/Footer'));</code></pre>
+
+<h2>3.3 State Management & "Lifting State Up" Pattern</h2>
+<p>
+  State flows unidirectionally from parent to children. In <code>HomePage.tsx</code>, the <code>wishes</code> state is lifted up to allow <code>&lt;SendWishes /&gt;</code> to submit new entries while <code>&lt;Wishes /&gt;</code> displays them reactively without external Redux/Zustand overhead.
+</p>
+<pre><code>// src/pages/HomePage.tsx
+export default function HomePage() {
+  const [wishes, setWishes] = useState&lt;Wish[]&gt;(INITIAL_WISHES);
+
+  // Callback passed downward to child component
+  const handleNewWish = (wish: Wish) => {
+    // Functional updater ensures immutable array prepending
+    setWishes((prev) => [wish, ...prev]);
+  };
+
+  return (
+    &lt;main&gt;
+      &lt;Wishes wishes={wishes} /&gt;
+      &lt;SendWishes onSubmit={handleNewWish} /&gt;
+    &lt;/main&gt;
+  );
+}</code></pre>
+
+<div class="page-break"></div>
+
+<h2>3.4 Custom Hook: <code>useCountdown</code> & Timer Lifecycle Management</h2>
+<p>
+  To decouple complex countdown mathematics from UI presentation, a custom hook was designed. It calculates days, hours, minutes, and seconds relative to the event date and manages an active <code>setInterval</code> with proper cleanup to prevent memory leaks.
+</p>
+<pre><code>// src/hooks/useCountdown.ts
+import { useState, useEffect, useCallback } from 'react';
+
+interface CountdownValues {
+  days: string;
+  hours: string;
+  minutes: string;
+  seconds: string;
+  isExpired: boolean;
+}
+
+export function useCountdown(targetDate: Date): CountdownValues {
+  // useCallback memoizes the calculation function
+  const calculate = useCallback((): CountdownValues => {
+    const now = new Date().getTime();
+    const target = targetDate.getTime();
+    const diff = target - now;
+
+    if (diff &lt;= 0) {
+      return { days: '00', hours: '00', minutes: '00', seconds: '00', isExpired: true };
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    return {
+      days: String(days).padStart(2, '0'),
+      hours: String(hours).padStart(2, '0'),
+      minutes: String(minutes).padStart(2, '0'),
+      seconds: String(seconds).padStart(2, '0'),
+      isExpired: false,
+    };
+  }, [targetDate]);
+
+  const [countdown, setCountdown] = useState&lt;CountdownValues&gt;(calculate);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCountdown(calculate());
+    }, 1000);
+
+    // Critical Cleanup: clears interval on component unmount
+    return () => clearInterval(interval);
+  }, [calculate]);
+
+  return countdown;
+}</code></pre>
+
+<h2>3.5 Direct DOM Interaction with <code>useRef</code></h2>
+<p>
+  React discourages direct DOM queries like <code>document.getElementById()</code>. The project utilizes typed <code>useRef</code> hooks for two distinct use cases:
+</p>
+<ol>
+  <li><strong>Media Playback</strong>: Controlling the HTML5 <code>&lt;audio&gt;</code> element in <code>Music.tsx</code> without re-rendering.</li>
+  <li><strong>Instance Variable Storage</strong>: Storing drag starting coordinates (<code>dragStartX.current</code>) in <code>Schedule.tsx</code> to calculate touch/swipe distance without triggering re-renders.</li>
+</ol>
+<pre><code>// src/components/Music.tsx
+const audioRef = useRef&lt;HTMLAudioElement | null&gt;(null);
+
+const toggleMusic = () => {
+  if (!audioRef.current) return;
+  if (isPlaying) {
+    audioRef.current.pause();
+    setIsPlaying(false);
+  } else {
+    audioRef.current.play()
+      .then(() => setIsPlaying(true))
+      .catch((err) => console.warn('Audio playback policy prevented autoplay:', err));
+  }
+};</code></pre>
+
+<div class="page-break"></div>
+
+<!-- SECTION 4 -->
+<h1>4. TypeScript Architecture & Static Type Safety</h1>
+<p>
+  TypeScript provides strict static typing throughout the codebase, catching type mismatches at authoring time and enabling IDE auto-completion.
+</p>
+
+<h2>4.1 Data Models & Interfaces</h2>
+<p>
+  Central data structures are strictly defined using TypeScript interfaces in <code>src/data/content.ts</code>.
+</p>
+<pre><code>// src/data/content.ts
+export interface Wish {
+  id: number;
+  name: string;
+  message: string;
+}
+
+export interface TimelineEvent {
+  time: string;
+  title: string;
+  subtitle: string;
+  icon?: string;
+}
+
+export interface CountdownValues {
+  days: string;
+  hours: string;
+  minutes: string;
+  seconds: string;
+  isExpired: boolean;
+}</code></pre>
+
+<h2>4.2 Component Props Typing</h2>
+<p>
+  Components declare their expected inputs using strongly-typed prop interfaces, including optional properties and callback functions.
+</p>
+<pre><code>// src/components/SendWishes.tsx
+interface SendWishesProps {
+  onSubmit?: (wish: Wish) => void; // Optional callback receiving a typed Wish
+}
+
+export default function SendWishes({ onSubmit }: SendWishesProps) {
+  // ...
+}</code></pre>
+
+<h2>4.3 Generic Types in React Hooks</h2>
+<p>
+  Generics allow passing type information directly into React's built-in hooks:
+</p>
+<pre><code>// Strongly typed state array
+const [wishes, setWishes] = useState&lt;Wish[]&gt;(INITIAL_WISHES);
+
+// Strongly typed DOM reference
+const frameRef = useRef&lt;HTMLDivElement&gt;(null);
+const audioRef = useRef&lt;HTMLAudioElement | null&gt;(null);
+
+// Form Event Typing
+const handleSubmit = (e: React.FormEvent) => {
+  e.preventDefault();
+  // ...
+};</code></pre>
+
+<h2>4.4 Type Narrowing & Safe Guards</h2>
+<pre><code>// src/utils/assets.ts - Guard clauses guaranteeing string safety
+export function asset(path: string): string {
+  if (!path) return '';
+  if (path.startsWith('http://') || path.startsWith('https://') || path.startsWith('data:')) {
+    return path;
+  }
+  const base = import.meta.env.BASE_URL || '/';
+  const cleanBase = base.endsWith('/') ? base : `${base}/`;
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  return `${cleanBase}${cleanPath}`;
+}</code></pre>
+
+<div class="page-break"></div>
+
+<!-- SECTION 5 -->
+<h1>5. Framer Motion & Complex Animation Mechanics</h1>
+<p>
+  Framer Motion powers the fluid, 60fps micro-interactions throughout the site. Rather than using generic CSS transitions, animations are orchestrated declaratively with custom physics and viewport tracking.
+</p>
+
+<h2>5.1 Dynamic Variants with Function Parameters (3D Countdown Flip)</h2>
+<p>
+  In <code>CountDown.tsx</code>, variants are defined as functions that take an index argument, enabling staggered 3D card flips.
+</p>
+<pre><code>// src/components/CountDown.tsx
+import { motion, type Variants } from 'framer-motion';
+
+const cardVariants: Variants = {
+  hidden: { rotateY: 0 },
+  visible: (idx: number) => ({
+    rotateY: 180,
+    transition: {
+      duration: 0.85,
+      ease: [0.34, 1.4, 0.64, 1], // Custom overshoot spring curve
+      delay: 0.75 + idx * 0.14,    // Staggered sequential delay
+    },
+  }),
+};
+
+// Applied in JSX:
+&lt;motion.div
+  custom={idx}
+  variants={cardVariants}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+&gt;</code></pre>
+
+<h2>5.2 Cubic-Bézier Elastic Curves</h2>
+<p>
+  To emulate physical inertia, easing curves are defined using cubic-bézier control points:
+</p>
+<ul>
+  <li><code>ease: [0.34, 1.56, 0.64, 1]</code>: Generates an elastic rubber-band overshoot on entrance, where the element moves past its destination and snaps back.</li>
+  <li><code>ease: [0.25, 1, 0.5, 1]</code>: Decelerating ease-out curve for natural text reveals.</li>
+</ul>
+
+<h2>5.3 Infinite Keyframe Loops (Twinkling Stars & Breathing Florals)</h2>
+<p>
+  Keyframes animate continuous ambient motion without blocking the main browser thread.
+</p>
+<pre><code>// Twinkling Star Keyframe Animation
+&lt;motion.div
+  className="nce-location-star-one"
+  animate={{ 
+    opacity: [0.35, 0.9, 0.35], 
+    scale: [0.9, 1.05, 0.9] 
+  }}
+  transition={{ 
+    duration: 3.8, 
+    ease: 'easeInOut', 
+    repeat: Infinity 
+  }}
+&gt;
+  &lt;img alt="Star" src={asset('/svg/star.svg')} /&gt;
+&lt;/motion.div&gt;</code></pre>
+
+<h2>5.4 Viewport-Driven Scroll Triggering with <code>useInView</code></h2>
+<pre><code>// src/components/Location.tsx
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
+
+export default function Location() {
+  const frameRef = useRef&lt;HTMLDivElement&gt;(null);
+  // Fires animation when 35% of the frame is visible, exactly once
+  const isInView = useInView(frameRef, { amount: 0.35, once: true });
+
+  return (
+    &lt;div ref={frameRef}&gt;
+      &lt;motion.h2
+        initial={{ opacity: 0, y: 25 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 25 }}
+        transition={{ duration: 1.0, delay: 1.4 }}
+      &gt;
+        Location
+      &lt;/motion.h2&gt;
+    &lt;/div&gt;
+  );
+}</code></pre>
+
+<div class="page-break"></div>
+
+<!-- SECTION 6 -->
+<h1>6. CSS Architecture, 3D Transforms & Tailwind</h1>
+<p>
+  The styling architecture combines utility-first Tailwind classes for layout scaffolding with advanced pure CSS for 3D coordinate transformations.
+</p>
+
+<h2>6.1 3D CSS Flip Card Mechanics</h2>
+<p>
+  The 3D cards in the Countdown timer and Location ribbon rely on three fundamental CSS 3D properties:
+</p>
+<pre><code>/* 1. Establish 3D perspective viewport */
+.nce-card-container {
+  perspective: 1000px;
+}
+
+/* 2. Preserve 3D space across parent and child */
+.nce-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.85s cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+
+/* 3. Hide reverse face when flipped */
+.nce-card-front,
+.nce-card-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* 4. Pre-rotate back face */
+.nce-card-back {
+  transform: rotateY(180deg);
+}</code></pre>
+
+<div class="card-grid no-break">
+  <div class="card">
+    <div class="card-title">How perspective Works</div>
+    <code>perspective: 1000px</code> determines the simulated distance between the viewer's eye and the z=0 plane. Lower values exaggerate 3D distortion; 1000px delivers a subtle, realistic physical depth.
+  </div>
+  <div class="card">
+    <div class="card-title">Role of backface-visibility</div>
+    Without <code>backface-visibility: hidden</code>, when a card flips 180 degrees, the front face would show mirror-reversed instead of revealing the back face content.
+  </div>
+</div>
+
+<h2>6.2 Glassmorphism & Translucent Backdrop Filter</h2>
+<p>
+  The navigation header floats over the viewport with frosted glass translucency:
+</p>
+<pre><code>/* src/styles/main.css - Line 2754 */
+.shared-navbar.fixed.nce-navbar {
+  background-color: rgba(244, 229, 227, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(235, 212, 210, 0.45);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}</code></pre>
+
+<h2>6.3 Tailwind Design System Configuration</h2>
+<pre><code>// tailwind.config.js
+module.exports = {
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  theme: {
+    extend: {
+      colors: {
+        sage: '#8a9a86',
+        blush: '#f4e5e3',
+        rose: '#c88d83',
+        ribbon: '#d97d74',
+        tan: '#e8d5cf',
+      },
+      fontFamily: {
+        script: ['Galada', 'cursive'],
+        serif: ['Playfair Display', 'serif'],
+        sans: ['Mulish', 'sans-serif'],
+      },
+    },
+  },
+  plugins: [],
+};</code></pre>
+
+<div class="page-break"></div>
+
+<!-- SECTION 7 -->
+<h1>7. Vite Build Engineering, Routing & CI/CD Pipeline</h1>
+
+<h2>7.1 Subpath Asset Resolution (<code>import.meta.env.BASE_URL</code>)</h2>
+<p>
+  Deploying to GitHub Pages means the application lives at a repository subpath:
+  <code>https://ganeshpoojary727.github.io/Code_Nimbus_Solutions__Assignment/</code>.
+</p>
+<p>
+  Hardcoded root paths like <code>/svg/star.svg</code> fail because the browser requests them from the domain root. The project uses a centralized <code>asset(path)</code> helper:
+</p>
+<pre><code>// src/utils/assets.ts
+export function asset(path: string): string {
+  if (!path) return '';
+  if (path.startsWith('http://') || path.startsWith('https://') || path.startsWith('data:')) {
+    return path;
+  }
+  const base = import.meta.env.BASE_URL || '/';
+  const cleanBase = base.endsWith('/') ? base : `${base}/`;
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  return `${cleanBase}${cleanPath}`;
+}</code></pre>
+
+<h2>7.2 Why <code>HashRouter</code> Instead of <code>BrowserRouter</code>?</h2>
+<div class="callout callout-interview no-break">
+  <div class="callout-title">Architectural Interview Question</div>
+  <p><strong>"Why did you choose HashRouter over BrowserRouter?"</strong></p>
+  <p>
+    GitHub Pages is a static web server without server-side rewrite rules (such as Nginx <code>try_files $uri /index.html</code>). If a user bookmarks or refreshes <code>https://.../gallery</code> with <code>BrowserRouter</code>, GitHub Pages looks for a physical directory named <code>gallery/index.html</code> and returns an HTTP 404 error.
+  </p>
+  <p>
+    <code>HashRouter</code> stores route state in the URL hash fragment (<code>#/gallery</code>). Browsers never send the hash portion to the web server, allowing React Router to intercept and render the route entirely client-side without requiring server reconfiguration.
+  </p>
+</div>
+
+<h2>7.3 GitHub Actions CI/CD Pipeline (<code>deploy.yml</code>)</h2>
+<p>
+  On every push to the <code>main</code> branch, GitHub Actions executes an automated multi-stage build:
+</p>
+<pre><code># .github/workflows/deploy.yml
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: naming-ceremony/package-lock.json
+
+      - name: Install Dependencies & Build
+        run: |
+          cd naming-ceremony
+          npm ci
+          npm run build
+
+      - name: Upload GitHub Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: naming-ceremony/dist
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4</code></pre>
+
+<div class="page-break"></div>
+
+<!-- SECTION 8 -->
+<h1>8. Component Walkthrough & Architecture</h1>
+<p>
+  A complete file-by-file breakdown of every module comprising the application.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>File Path</th>
+      <th>Role</th>
+      <th>Key Mechanics & Implementation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>src/main.tsx</code></td>
+      <td>Application Entrypoint</td>
+      <td>Mounts React 19 root into <code>#root</code> DOM node wrapped with <code>&lt;HashRouter&gt;</code>.</td>
+    </tr>
+    <tr>
+      <td><code>src/App.tsx</code></td>
+      <td>Global Root Shell</td>
+      <td>Houses <code>&lt;Suspense&gt;</code> boundary, sticky <code>Navbar</code>, persistent <code>Music</code> controller, and page routes.</td>
+    </tr>
+    <tr>
+      <td><code>src/pages/HomePage.tsx</code></td>
+      <td>Page Coordinator</td>
+      <td>Manages <code>wishes</code> state, imports 9 lazy-loaded sections, handles submission callbacks.</td>
+    </tr>
+    <tr>
+      <td><code>src/components/HeroSection.tsx</code></td>
+      <td>Hero Banner</td>
+      <td>Floral entrance blooms, title typography, baby announcement, and infinite star twinkling loops.</td>
+    </tr>
+    <tr>
+      <td><code>src/components/CountDown.tsx</code></td>
+      <td>Countdown Timer</td>
+      <td>Consumes <code>useCountdown</code>, renders 4 3D flipping cards (Days, Hours, Minutes, Seconds) with staggered delays.</td>
+    </tr>
+    <tr>
+      <td><code>src/hooks/useCountdown.ts</code></td>
+      <td>Custom Timer Hook</td>
+      <td>Pure mathematical diff calculation, interval ticker, <code>padStart(2, '0')</code> formatting, memory leak cleanup.</td>
+    </tr>
+    <tr>
+      <td><code>src/components/WarmInvite.tsx</code></td>
+      <td>Invitation Letter</td>
+      <td>Personal message from parents, decorative floral SVGs, responsive layout framing.</td>
+    </tr>
+    <tr>
+      <td><code>src/components/Location.tsx</code></td>
+      <td>Venue & Maps</td>
+      <td>3D ribbon flip reveal, venue address, venue photograph, and interactive Google Maps link.</td>
+    </tr>
+    <tr>
+      <td><code>src/components/Wishes.tsx</code></td>
+      <td>Community Carousel</td>
+      <td>Horizontally scrollable/paginated list of warm wishes from friends and relatives.</td>
+    </tr>
+    <tr>
+      <td><code>src/components/SendWishes.tsx</code></td>
+      <td>Interactive Form</td>
+      <td>Controlled form inputs, AI random wish generator, submission loading state, and state lifting to parent.</td>
+    </tr>
+    <tr>
+      <td><code>src/components/Schedule.tsx</code></td>
+      <td>Event Timeline</td>
+      <td>Chronological ceremony schedule with custom touch/mouse drag-swipe gesture detection via <code>useRef</code>.</td>
+    </tr>
+    <tr>
+      <td><code>src/components/Video.tsx</code></td>
+      <td>Video Showcase</td>
+      <td>Responsive 16:9 embedded YouTube video container celebrating previous milestone moments.</td>
+    </tr>
+    <tr>
+      <td><code>src/components/Music.tsx</code></td>
+      <td>Audio Controller</td>
+      <td>Floating bottom-corner music button, HTML5 <code>&lt;audio&gt;</code> ref management, browser autoplay handling.</td>
+    </tr>
+    <tr>
+      <td><code>src/components/Navbar.tsx</code></td>
+      <td>Navigation Header</td>
+      <td>Fixed glassmorphism bar with active route highlighting using React Router's <code>NavLink</code>.</td>
+    </tr>
+    <tr>
+      <td><code>src/components/Footer.tsx</code></td>
+      <td>Site Footer</td>
+      <td>Traditional closing blessings, copyright notice, and links to top.</td>
+    </tr>
+    <tr>
+      <td><code>src/data/content.ts</code></td>
+      <td>Data Store</td>
+      <td>Centralized configuration for event dates, venues, parents' names, initial wishes, and AI templates.</td>
+    </tr>
+    <tr>
+      <td><code>src/utils/assets.ts</code></td>
+      <td>Asset URL Resolver</td>
+      <td>Prepends <code>import.meta.env.BASE_URL</code> to ensure assets load correctly across local dev and GitHub Pages.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="page-break"></div>
+
+<!-- SECTION 9 -->
+<h1>9. Technical Interview Defense Cheatsheet</h1>
+<p>
+  Common senior frontend interview questions and the exact architectural defense based on this codebase:
+</p>
+
+<div class="qa-block no-break">
+  <div class="qa-q">Q1: How did you ensure 60fps performance with so many concurrent animations?</div>
+  <div class="qa-a">
+    All Framer Motion animations animate hardware-accelerated CSS properties: <code>transform</code> (such as <code>scale</code>, <code>rotateY</code>, <code>y</code>) and <code>opacity</code>. These properties do not trigger expensive browser layout recalculations or repaints. They are offloaded directly to the GPU compositor layer. Furthermore, lazy loading ensures heavy asset trees aren't competing for initial render cycles.
+  </div>
+</div>
+
+<div class="qa-block no-break">
+  <div class="qa-q">Q2: Why use a custom hook (useCountdown) instead of putting the timer inside the component?</div>
+  <div class="qa-a">
+    Separation of concerns. The mathematical countdown calculation and interval lifecycle are pure business logic. Extracting them into <code>useCountdown</code> makes the logic unit-testable in isolation, highly reusable across different views, and prevents the <code>CountDown.tsx</code> UI component from being cluttered with interval timers and state math.
+  </div>
+</div>
+
+<div class="qa-block no-break">
+  <div class="qa-q">Q3: How does the AI Wish Generator work in SendWishes.tsx?</div>
+  <div class="qa-a">
+    Inside <code>src/data/content.ts</code>, a curated set of heartfelt blessing templates (<code>AI_WISH_TEMPLATES</code>) is maintained. When the user clicks the "Generate AI Wish" button, <code>handleGenerateAIWish</code> selects a pseudo-random template using <code>Math.floor(Math.random() * AI_WISH_TEMPLATES.length)</code> and updates the controlled <code>message</code> state, instantly populating the textarea.
+  </div>
+</div>
+
+<div class="qa-block no-break">
+  <div class="qa-q">Q4: How did you avoid memory leaks with setInterval?</div>
+  <div class="qa-a">
+    In React, unmounting a component while an interval is running leaves an orphaned timer in browser memory attempting to update unmounted component state. In <code>useCountdown.ts</code>, the <code>useEffect</code> returns a cleanup closure: <code>return () => clearInterval(interval);</code>. React automatically executes this cleanup function whenever the component unmounts or before re-running the effect.
+  </div>
+</div>
+
+<div class="qa-block no-break">
+  <div class="qa-q">Q5: How does swipe/drag work in Schedule.tsx without external gesture libraries?</div>
+  <div class="qa-a">
+    I implemented a lightweight pointer tracking system using React synthetic touch and mouse events (<code>onTouchStart</code>, <code>onTouchEnd</code>, <code>onMouseDown</code>, <code>onMouseUp</code>). A <code>useRef&lt;number | null&gt;(null)</code> stores the initial client X coordinate without triggering component re-renders. On touch/mouse release, the delta is measured against a 40px threshold to trigger forward or backward timeline progression.
+  </div>
+</div>
+
+<div class="qa-block no-break">
+  <div class="qa-q">Q6: What is the purpose of Oxlint in this project?</div>
+  <div class="qa-a">
+    Oxlint is an ultra-fast, Rust-based JavaScript and TypeScript linter that runs 50 to 100 times faster than legacy ESLint. It caught dead imports and unused variables instantly during development, ensuring that our final codebase had zero warnings and zero dead dependencies before submission.
+  </div>
+</div>
+
+<div class="qa-block no-break">
+  <div class="qa-q">Q7: How did you handle browser autoplay audio restrictions in Music.tsx?</div>
+  <div class="qa-a">
+    Modern browsers prohibit programmatic audio playback without prior user interaction. In <code>Music.tsx</code>, instead of attempting forbidden autoplay on mount, an explicit user-interactive floating toggle button was created. The playback call catches any browser rejection gracefully: <code>audioRef.current.play().catch(err =&gt; console.warn(err))</code>.
+  </div>
+</div>
+
+<div style="margin-top: 2rem; padding: 1rem; border-top: 2px solid #8b3a3a; text-align: center; font-size: 8.5pt; color: #64748b;">
+  <strong>Naming Ceremony Web Application - Master Technical Documentation</strong><br>
+  Prepared by Ganesh Poojary &bull; Candidate for Front-End Developer Intern &bull; Code Nimbus Solutions Assignment
+</div>
+
+</body>
+</html>

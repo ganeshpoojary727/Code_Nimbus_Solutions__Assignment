@@ -573,9 +573,21 @@ html {
   display: none;
 }
 
+@media (max-width: 768px) {
+  .nce-hero-container {
+    margin-top: 8rem;
+    min-height: calc(100vh - 8rem);
+    min-height: calc(100dvh - 8rem);
+    padding-bottom: 3.5rem;
+  }
+}
+
 @media (max-width: 600px) {
   .nce-hero-container {
     margin-top: 8rem;
+    min-height: calc(100vh - 8rem);
+    min-height: calc(100dvh - 8rem);
+    padding-bottom: 3.5rem;
   }
 
   /* Hide desktop stars & flowers on mobile */
@@ -686,7 +698,7 @@ html {
 
 /* Short viewport overrides */
 
-@media (max-height: 650px) {
+@media (max-height: 650px) and (min-width: 769px) {
   .nce-hero-container {
     margin-top: 3.5rem !important;
     padding: 1.2rem 1.5rem 0.8rem !important;
@@ -1660,6 +1672,7 @@ html {
   width: 80%;
   display: -webkit-box;
   -webkit-line-clamp: 4;
+  line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
